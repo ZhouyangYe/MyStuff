@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>react1</title>
+	<script src="js/lib/build/react.min.js"></script>
+	<script src="js/lib/build/react-dom.min.js"></script>
+	<script src="js/lib/build/browser.min.js"></script>
+	<link href="style/main.css" rel="stylesheet" />
+	<script src="js/main.js"></script>
+</head>
+<body>
+	<div id="first"></div>
+	<script type="text/babel">
+		var names = ['yes','no','hello'];
+		ReactDOM.render(
+			<div>
+				{
+					names.map(function(name){
+						return <div>lalala, {name}</div>
+					})
+				}
+			</div>,
+			document.getElementById('first')
+		);
+	</script>
+</body>
+</html>

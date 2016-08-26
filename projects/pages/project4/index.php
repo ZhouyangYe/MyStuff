@@ -1,0 +1,200 @@
+<?php
+require '../../../connect.php';
+require '../../../core.php';
+if(!loggedin()){
+	header('Location: ../../../index.php');
+}else if($_SESSION['user_id']!=1){
+	header('Location: ../../error_pages/no_access.html');
+}
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Zhouyang Ye Project</title>
+	<link href="style/main.css" rel="stylesheet" />
+	<script src="js/main.js"></script>
+</head>
+
+<body>
+	<div id="top">
+		<div id="top_wrapper">
+			<div id="top_header">
+				<div id="tl_wrapper"><div id="scrollbar"><p>This is a notification bar. You can use it to post your proms and discounts.</p><p>Hello my name is Zhouyang Ye very nice to meet you!</p><p>blahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblah.....</p></div></div>
+				<div id="tr_wrapper">
+					<h3>SOCIALIZE WITH US:</h3>
+					<a href="#"><img src="images/contact1.jpg" alt=""></img></a>
+					<a href="#"><img src="images/contact2.jpg" alt=""></img></a>
+					<a href="#"><img src="images/contact3.jpg" alt=""></img></a>
+					<a href="#"><img src="images/contact4.jpg" alt=""></img></a>
+					<a href="#"><img src="images/contact5.jpg" alt=""></img></a>
+				</div>
+			</div>
+			<div id="logo"><img src="images/logo.gif" alt=""></img></div>
+			<dl>
+				<dd>
+					<a class="nav" href="#">HOME</a>
+					<p>Back Home</p>
+					<ul>
+						<a href="#"><li>Home item1</li></a>
+						<a href="#"><li>Home item2</li></a>
+						<a href="#"><li class="bottom">Home item3</li></a>
+					</ul>
+				</dd>
+				<dd>
+					<a class="nav" href="#">FEATURES</a>
+					<p>Our best products</p>
+					<ul>
+						<a href="#"><li>Features item1</li></a>
+						<a href="#"><li>Features item2</li></a>
+						<a href="#"><li class="bottom">Features item3</li></a>
+					</ul>
+				</dd>
+				<dd>
+					<a class="nav" href="#">PORTFOLIO</a>
+					<p>Our stuff on display</p>
+					<ul>
+						<a href="#"><li>Portfolio item1</li></a>
+						<a href="#"><li>Portfolio item2</li></a>
+						<a href="#"><li class="bottom">Portfolio item3</li></a>
+					</ul>
+				</dd>
+				<dd>
+					<a class="nav" href="#">BLOG</a>
+					<p>Our news</p>
+					<ul>
+						<a href="#"><li>Blog item1</li></a>
+						<a href="#"><li>Blog item2</li></a>
+						<a href="#"><li class="bottom">Blog item3</li></a>
+					</ul>
+				</dd>
+				<dd>
+					<a class="nav" href="#">CONTACT</a>
+					<p>Drop us a note</p>
+					<ul>
+						<a href="#"><li>Contact item1</li></a>
+						<a href="#"><li>Contact item2</li></a>
+						<a href="#"><li class="bottom">Contact item3</li></a>
+					</ul>
+				</dd>
+			</dl>
+		</div>
+	</div>
+	
+	<div id="header">
+		<div id="pictures">
+			<ul>
+				<li style="opacity:1;"><img src="images/banner/header_default.jpg" alt="" /></li>
+				<li><img src="images/banner/header_shift.jpg" alt="" /></li>
+				<li><img src="images/banner/header_3rd.jpg" alt="" /></li>
+			</ul>
+		</div>
+		<div id="header_wrapper">
+			<div id="article"><h2>This is a Title</h2><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet 
+	dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit 
+	lobortis nisl ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed 
+	diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim 
+	veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p></div>
+			<div id="btn">
+				<a href="javascript:;"><img class="l_btn" src="images/buttons/lbutton.png"alt=""></img></a>
+				<a href="javascript:;"><img class="r_btn" src="images/buttons/rbutton.png"alt=""></img></a>
+			</div>
+		</div>
+	</div>
+	
+	<div id="content">
+		<div id="options_wrapper">
+			<div id="options">
+				<a class="option" href="#"><div id="icon1"></div><h3>BUILT IN SHORTCODES</h3><p>Lorem ipsum dolor sit amet, 
+	consectetuer adipiscing elit, sed
+	diam nonummy nibh euismod 
+	tincidunt ut laoreet </p></a>
+				<a class="option" href="#"><div id="icon2"></div><h3>ADVANCED OPTIONS</h3><p>Lorem ipsum dolor sit amet, 
+	consectetuer adipiscing elit, sed
+	diam nonummy nibh euismod 
+	tincidunt ut laoreet </p></a>
+				<a class="option" href="#"><div id="icon3"></div><h3>TWO SLIDERS</h3><p>Lorem ipsum dolor sit amet, 
+	consectetuer adipiscing elit, sed
+	diam nonummy nibh euismod 
+	tincidunt ut laoreet </p></a>
+				<a class="option" href="#"><div id="icon4"></div><h3>TWO PORTFOLIO STYLES</h3><p>Lorem ipsum dolor sit amet, 
+	consectetuer adipiscing elit, sed
+	diam nonummy nibh euismod 
+	tincidunt ut laoreet </p></a>
+			</div>
+		</div>
+		<div id="describe"><p>Welcome to Radial - a minimalistic WordPress theme. This is a short line that best describes your site.</p></div>
+		<div id="posts_wrapper">
+			<div id="posts">
+				<div class="pic"><a href="#"><div class="trigger"><img src="images/pic1.png" alt=""></img><img class="shadow" src="images/shadow.png" alt=""></img></div></a><h3>BLOG POST NUMBER 1</h3><p>Lorem ipsum dolor sit amet, consectetu 
+	adipiscing elit, sed diam nonummy nibh 
+	euismod tincidunt ut laoreet iam.<p></div>
+				<div class="pic second"><a href="#"><div class="trigger"><img src="images/pic2.png" alt=""></img><img class="shadow" src="images/shadow.png" alt=""></img></div></a><h3>BLOG POST NUMBER 2</h3><p>Lorem ipsum dolor sit amet, consectetu 
+	adipiscing elit, sed diam nonummy nibh 
+	euismod tincidunt ut laoreet iam.<p></div>
+				<div class="pic"><a href="#"><div class="trigger"><img src="images/pic3.png" alt=""></img><img class="shadow" src="images/shadow.png" alt=""></img></div></a><h3>BLOG POST NUMBER 3</h3><p>Lorem ipsum dolor sit amet, consectetu 
+	adipiscing elit, sed diam nonummy nibh 
+	euismod tincidunt ut laoreet iam.<p></div>
+				<div class="pic"><a href="#"><div class="trigger"><img src="images/pic4.png" alt=""></img><img class="shadow" src="images/shadow.png" alt=""></img></div></a><h3>BLOG POST NUMBER 4</h3><p>Lorem ipsum dolor sit amet, consectetu 
+	adipiscing elit, sed diam nonummy nibh 
+	euismod tincidunt ut laoreet iam.<p></div>
+			</div>
+		</div>
+		<div id="bottom_logo"><a href="#"><img src="images/buttons/b_logo.png" alt=""></img></a></div>
+	</div>
+	
+	<div id="bottom">
+		<div id="bottom_wrapper">
+			<div id="border">
+				<div id="gallery">
+					<h3 class="title">FLICKR GALLERY</h3>
+					<p>Hover to highlight images. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor. </p>
+					<div id="pics">
+						<div id="firstline">
+							<a href="#"><img src="images/pictures/pic1.jpg" alt=""></img></a>
+							<a href="#"><img src="images/pictures/pic2.jpg" alt=""></img></a>
+							<a href="#"><img src="images/pictures/pic3.jpg" alt=""></img></a>
+							<a href="#"><img src="images/pictures/pic4.jpg" alt=""></img></a>
+						</div>
+						<div id="secondline">
+							<a href="#"><img src="images/pictures/pic5.jpg" alt=""></img></a>
+							<a href="#"><img src="images/pictures/pic6.jpg" alt=""></img></a>
+							<a href="#"><img src="images/pictures/pic7.jpg" alt=""></img></a>
+							<a href="#"><img src="images/pictures/pic8.jpg" alt=""></img></a>
+						</div>
+					</div>
+				</div>
+				<div id="email">
+					<form action="">
+						<h3 class="title">GET IN TOUCH</h3>
+						<div class="ebox"><input class="box eb" type="text" value="Email (required)"/></div>
+						<div class="ebox"><input class="box eb" type="text" value="Email (required)"/></div>
+						<div class="tbox"><textarea class="box tb" rows="5" cols="30" >Message (required)</textarea></div>
+						<div class="s_btn"><input class="sbtn" type="submit" value="Send Message"/></div>
+					</form>
+				</div>
+				<div id="l_posts">
+					<h3 class="title">LATEST POSTS</h3>
+					<div class="pblock"><img class="photo" src="images/pictures/photo1.jpg"></img><div class="article"><a href="#"><h3>This is a sample Post 1</h3></a><p>Lorem ipsum dolor sit amet, 
+consectetuer adipiscing elit, 
+sed diam nonummy nibh...</p></div></div>
+					<div class="pblock"><img class="photo" src="images/pictures/photo2.jpg"></img><div class="article"><a href="#"><h3>This is a sample Post 1</h3></a><p>Lorem ipsum dolor sit amet, 
+consectetuer adipiscing elit, 
+sed diam nonummy nibh...</p></div></div>
+					<div class="pblock"><img class="photo" src="images/pictures/photo3.jpg"></img><div class="article"><a href="#"><h3>This is a sample Post 1</h3></a><p>Lorem ipsum dolor sit amet, 
+consectetuer adipiscing elit, 
+sed diam nonummy nibh...</p></div></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div id="footer">
+		<div id="footer_wrapper">
+			<p>© 2016 Made by Zhouyang Ye</p>
+			<div id="nav"><a href="#"><h3>HOME</h3></a><a href="#"><h3>FEATURES</h3></a><a href="#"><h3>CONTACT</h3></a><a href="#"><h3>FORUM</h3></a></div>
+		</div>
+	</div>
+</body>
+</html>
