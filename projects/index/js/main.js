@@ -1,3 +1,4 @@
+'use strict';
 var controller = {count:((getCookie('ratio')*document.documentElement.clientHeight+1)||1),ratio:(getCookie('ratio')||0)};//used to store global values.
 //1.count:used to record value of window's scrollTop.
 //2.ratio:used to record which part of the page the user is currently browsing.
@@ -672,8 +673,8 @@ function doDrag(oBox){
 		var leftMost = document.documentElement.clientWidth-oBox.offsetWidth;
 		var topMost = document.documentElement.clientHeight+document.body.scrollTop+document.documentElement.scrollTop-oBox.offsetHeight;
 		document.onmousemove = function(ev){
-			xDis = ev.clientX-xPrev;
-			yDis = ev.pageY-yPrev;
+			var xDis = ev.clientX-xPrev;
+			var yDis = ev.pageY-yPrev;
 			xPrev = ev.clientX;
 			yPrev = ev.pageY;
 			oBox.speedX = Math.ceil(2*xDis);

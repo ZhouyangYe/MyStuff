@@ -141,7 +141,7 @@ li{list-style:none;}
 
 /*door*/
 #door{display:block;position:fixed;height:140px;width:80px;bottom:56px;left:40px;background:#000;perspective:400px;perspective-origin:left 40px;opacity:0.7;transition:opacity 0.4s ease;z-index:88;transition:background 0.5s ease;}
-#door .pivot{perspective:preserve-3d;position:absolute;transform:translateZ(-8px);left:-2px;height:18px;width:8px;background:#ddd;}
+#door .pivot{transform-style:preserve-3d;position:absolute;transform:translateZ(-8px);left:-2px;height:18px;width:8px;background:#ddd;}
 #door .pivot:nth-of-type(1){top:18px;}
 #door .pivot:nth-of-type(2){top:102px;}
 #door .cover{position:absolute;height:140px;width:80px;border:10px solid #d3b17d;border-top:14px solid #d3b17d;border-bottom:none;left:-10px;top:-14px;border-radius:10px 10px 0 0;z-index:2;}
@@ -149,9 +149,10 @@ li{list-style:none;}
 #door .inner{position:absolute;width:0;height:140px;transition:transform 1s ease;transition-delay:1s;transform-style:preserve-3d;transform-origin:left center -9px;z-index:1;}
 #door .tEdge{position:absolute;width:78px;height:6px;top:-7px;left:0;transform-style:preserve-3d;transform-origin:bottom;transform:rotateX(80deg);background:#fc6;box-shadow:-1px -1px 5px #000 inset;}
 #door .lEdge{position:absolute;width:8px;height:139px;top:0;left:-7px;transform-style:preserve-3d;transform-origin:right;transform:rotateY(-80deg);background:#fc6;box-shadow:-1px -1px 10px #888 inset;}
+#door .lEdge:nth-of-type(7){transform:rotateY(-90deg);}
 #door .window{position:absolute;width:0;height:40px;z-index:1;transform-style:preserve-3d;}
 #door .overlap{position:absolute;z-index:10;background:#fc6;}
-#over{position:absolute;top:0p;left:0;z-index:2;}
+#over{position:absolute;top:0;left:0;z-index:2;}
 #over .overlap:nth-of-type(1){left:1px;width:9px;height:130px;}
 #over .overlap:nth-of-type(2){left:34px;width:12px;height:130px;}
 #over .overlap:nth-of-type(3){left:70px;width:10px;height:130px;}

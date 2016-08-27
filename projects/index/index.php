@@ -17,11 +17,11 @@ if(!loggedin()){
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<meta charset="utf-8">
 	<title>yzy Bright ``` Home</title>
-	<link href="style/main.css" rel="stylesheet" />
+	<link type="text/css" href="style/main.css" rel="stylesheet" />
 	<link href="images/icons/bitbug_favicon.ico" rel="shortcut icon" />
 	<base target="_blank" />
 	<script src="js/move.js"></script>
@@ -81,6 +81,7 @@ if(!loggedin()){
 				<div class="overlap"></div>
 				<div class="overlap"></div>
 			</div>
+			<div class="lEdge"></div>
 			<div class="lEdge"></div>
 			<div class="tEdge"></div>
 			<div class="handler"></div>
@@ -145,7 +146,7 @@ if(!loggedin()){
 		<div class="side"><a href="javascript:;" target="_self">tap me</a></div>
 		<div class="board clear">
 			<div class="close">X</div>
-			<img class="logo" src="images/logo_leaf.png"></img>
+			<img class="logo" src="images/logo_leaf.png" alt=""/>
 			<article class="clear">
 				<h3><?php echo $title;?> Work</h3>
 				<ul></ul>
@@ -160,27 +161,27 @@ if(!loggedin()){
 	<div id="info"><h3>About me</h3></div>
 <!--about me end-->
 <!--sliding pictures-->
-	<section id="play">
+	<div id="play">
 		<div class="prev">
-			<img src="images/prev.png"></img>
-			<img src="images/prev.png"></img>
+			<img src="images/prev.png" alt=""/>
+			<img src="images/prev.png" alt=""/>
 		</div>
 		<div class="next">
-			<img src="images/next.png"></img>
-			<img src="images/next.png"></img>
+			<img src="images/next.png" alt=""/>
+			<img src="images/next.png" alt=""/>
 		</div>
 		<ul>
-			<li class="middle"><span><img src="images/bg1.jpg"></img></span><div></div><img class="shadow" src="images/shadow.png"></img></li>
-			<li class="left"><span><img src="images/bg2.jpg"></img></span><div></div><img class="shadow" src="images/shadow.png"></img></li>
-			<li class="right"><span><img src="images/bg3.jpg"></img></span><div></div><img class="shadow" src="images/shadow.png"></img></li>
+			<li class="middle"><span><img src="images/bg1.jpg" alt=""/></span><div></div><img class="shadow" src="images/shadow.png" alt=""/></li>
+			<li class="left"><span><img src="images/bg2.jpg" alt=""/></span><div></div><img class="shadow" src="images/shadow.png" alt=""/></li>
+			<li class="right"><span><img src="images/bg3.jpg" alt=""/></span><div></div><img class="shadow" src="images/shadow.png" alt=""/></li>
 		</ul>
-	</section>
+	</div>
 <!--sliding pictures end-->
 <!--photo-->
 	<section id="album">
 		<div class="cover"><h3>A l b u m</h3></div>
 		<ul class="pictures">
-			<li><img src="images/photos/photo1.jpg"></img></li>
+			<li><img src="images/photos/photo1.jpg" alt=""/></li>
 		</ul>
 	</section>
 <!--photo end-->
@@ -188,11 +189,11 @@ if(!loggedin()){
 	<div id="light">
 		<div class="knot"></div>
 		<div class="combine">
-			<img src="images/bulb.png" class="bulb"></img>
+			<img src="images/bulb.png" class="bulb" alt=""/>
 			<div class="wrap"><span class="flareOff"></span><span class="glowOff"></span></div>
 		</div>
 		<div class="cover"></div>
-		<img src="images/pole.png" class="pole"></img>
+		<img src="images/pole.png" class="pole" alt=""/>
 	</div>
 <!--bulb and light end-->
 </section>
