@@ -1,2 +1,28 @@
-body,li,ul{margin:0;padding:0}
+body,li,ul,img,select,option,p,h3,input{margin:0;padding:0;}
 li{list-style:none;}
+
+/*pic list*/
+.wrap{position:absolute;top:0;left:calc(50% - 500px);padding-top:18px;width:1000px;text-align:center;background:#888;padding-bottom:18px;}
+.search{width:360px;height:60px;margin:0 auto;}
+.search p{float:left;}
+.search p:nth-of-type(2){padding-left:10px;}
+li:before,li:after{content:"";display:table;}
+li{display:inline-block;width:800px;background:#eee;text-align:left;vertical-align:top;margin-top:10px;word-break:break-all;padding-right:8px;}
+li img,li .info{float:left;}
+li img{width:100px;margin:10px;}
+li .info{width:680px;margin-top:10px;;}
+
+/*animation*/
+.view.ng-enter,.view.ng-leave,.view.ng-move{transition:opacity 0.5s ease;}
+.view.ng-enter,.view.ng-leave.ng-leave-active{opacity:0;}
+.view.ng-enter.ng-enter-active,.view.ng-leave{opacity:1;}
+
+.pic.ng-enter,.pic.ng-leave,.pic.ng-move{transition:opacity 0.5s ease;}
+
+.pic.ng-enter,.pic.ng-leave.ng-leave-active,.pic.ng-move{opacity:0;}
+.pic.ng-enter.ng-enter-active,.pic.ng-leave,.pic.ng-move.ng-move-active{opacity:1;}
+
+/*pic detail*/
+.pic-detail {margin:88px auto;width:888px;background:#eee;height:288px;border-radius:8px;}
+.pic-detail p{width:100%;height:100%;text-align:center;line-height:168px;}
+.pic-detail a{display:block;padding:20px;}

@@ -1,3 +1,4 @@
+"use strict";
 function setCookie(key,value,time){
 	var oDate = new Date();
 	oDate.setDate(oDate.getDate()+time);

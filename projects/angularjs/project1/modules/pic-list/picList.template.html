@@ -1,0 +1,23 @@
+<div class="wrap">
+	<div class="search">
+		<p>Search: <input ng-model="$ctrl.query"></p>
+		<p>
+			Sort by: <select ng-model="$ctrl.orderProp">
+				<option value="title">Name</option>
+				<option value="id">Time</option>
+			</select>
+		</p>
+	</div>
+	<ul class="pics">
+		<li ng-repeat="pic in $ctrl.list | filter:$ctrl.query | orderBy:$ctrl.orderProp" class="pic">
+			<a href="#!/pics/{{pic.id}}">
+				<img ng-src="{{pic.preview}}" alt="{{pic.id}}"/>
+			</a>
+			<div class="info">
+				<h3>{{pic.title}}</h3>
+				<p>URL: <a href="{{pic.url}}">{{pic.url}}</a></p>
+				<p>Referer: <a href="{{pic.referer}}">{{pic.referer}}</a></p>
+			</div>
+		</li>
+	</ul>
+</div>

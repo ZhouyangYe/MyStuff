@@ -35,10 +35,7 @@ if(loggedin()){
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="css/main.css">
 	<link href="projects/index/images/icons/bitbug_favicon.ico" rel="shortcut icon" />
-	<script src="js/move.js"></script>
-	<script src="js/play.js"></script>
 	<script src="js/shadow.js"></script>
-	<script src="js/login.js"></script>
 </head>
 <body>
 	<div id="wrapper">
@@ -60,23 +57,8 @@ if(loggedin()){
 		</form>
 	</div>
 	
-	<section id="play">
-		<div class="prev">
-			<img src="images/prev.png"></img>
-			<img src="images/prev.png"></img>
-		</div>
-		<div class="next">
-			<img src="images/next.png"></img>
-			<img src="images/next.png"></img>
-		</div>
-		<ul>
-			<li class="middle"><span><img src="images/bg1.jpg"></img></span><div></div><img class="shadow" src="images/shadow.png"></img></li>
-			<li class="left"><span><img src="images/bg2.jpg"></img></span><div></div><img class="shadow" src="images/shadow.png"></img></li>
-			<li class="right"><span><img src="images/bg3.jpg"></img></span><div></div><img class="shadow" src="images/shadow.png"></img></li>
-		</ul>
-	</section>
-	
 	<footer><h1>@Zhouyang Ye 2016</h1><a href="http://zhouyangbt.ca">zhouyangbt.ca</a></footer>
 	</div>
+	<script src="js/login.js"></script>
 </body>
 </html>

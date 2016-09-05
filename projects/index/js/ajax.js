@@ -1,3 +1,4 @@
+"use strict";
 function ajax(method, url, data, success) {
 	var xhr = null;
 	try {

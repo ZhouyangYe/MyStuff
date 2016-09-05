@@ -1,3 +1,4 @@
+"use strict";
 function startMove(obj,json,endFn,speed){
 		//console.log('running');
 		clearInterval(obj.timer);

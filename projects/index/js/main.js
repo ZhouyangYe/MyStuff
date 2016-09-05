@@ -1,8 +1,56 @@
-'use strict';
-var controller = {count:((getCookie('ratio')*document.documentElement.clientHeight+1)||1),ratio:(getCookie('ratio')||0)};//used to store global values.
+"use strict";
+var controller = {count:((getCookie('ratio')*document.documentElement.clientHeight+1)||1),ratio:(getCookie('ratio')||0),night:false};//used to store global values.
 //1.count:used to record value of window's scrollTop.
 //2.ratio:used to record which part of the page the user is currently browsing.
+//3.night:used to check if it's of mod night.
 window.onload = function(){
+	setTimeout(function(){
+		document.documentElement.scrollTop = 1;
+		document.body.scrollTop = 1;
+	},0);
+	
+	//cookie for scrollTop
+	(function(){
+		var oScroll = 1;
+		var ratio = 0;
+		//alert(document.cookie);
+		window.onunload = function(){
+			var ratio = controller.ratio;
+			setCookie('ratio',ratio,7);
+		};
+		//alert(document.cookie);
+		function setScroll(scrollTop){
+			document.documentElement.scrollTop = scrollTop;
+			document.body.scrollTop = scrollTop;
+		}
+		if(ratio=getCookie('ratio')){
+			//alert(ratio);
+			setTimeout(function(){
+				oScroll = ratio*document.documentElement.clientHeight+1;
+				setScroll(oScroll);
+			},0);
+		}else{
+			//alert('in');
+			setTimeout(function(){
+				setScroll(1);
+			},0);
+		}
+		window.onpageshow = function(){
+			if(ratio=getCookie('ratio')){
+				setTimeout(function(){
+					oScroll = ratio*document.documentElement.clientHeight+1;
+					setScroll(oScroll);
+				},0);
+			}else{
+				setTimeout(function(){
+					setScroll(1);
+				},0);
+			}
+			//alert('in');
+			//console.log(document.body.scrollTop);
+		}
+	})();
+	
 	//the window layout and scroll
 	(function(){
 		var blocks = document.getElementsByClassName("blocks");
@@ -12,14 +60,14 @@ window.onload = function(){
 		}
 		document.addEventListener("mousemove",function(e){e.preventDefault();},false);
 		document.addEventListener("mousedown",function(e){e.preventDefault();},false);
-		for(var i=0;i<blocks.length;i++){
+		for(var i=0;i<blocks.length;i++){//initialize the height of each block
 			if(i==0){
 				blocks[i].style.height = (h+1)+"px";
 			}else{
 				blocks[i].style.height = h+"px";
 			}
 		}
-		window.addEventListener("resize",function(){//handle the size of each section and the scroll bar
+		window.addEventListener("resize",function(){//handle the reaction to sizes' change of each section and the scroll bar
 			var height = document.documentElement.clientHeight;
 			for(var i=0;i<blocks.length;i++){
 				if(i==0){
@@ -124,7 +172,35 @@ window.onload = function(){
 		var oClose = oNotice.getElementsByClassName('close')[0];
 		var oButton = document.getElementById('info');
 		var oAbout = oButton.getElementsByTagName('h3')[0];
-		show();
+		var oCheck = oNotice.getElementsByTagName('input')[0];
+		var oPrompt = oNotice.getElementsByClassName('prop')[0];
+		var checked = getCookie('notice');
+		oCheck.onmouseenter = function(){
+			oPrompt.style.display = "block";
+			startMove(oPrompt,{opacity:80},null,6);
+		};
+		oCheck.onmouseleave = function(){
+			startMove(oPrompt,{opacity:0},function(){
+				oPrompt.style.display = "none";
+			},6);
+		};
+		if(checked!==undefined&&checked!==null){
+			//console.log('in'+" : "+checked);
+			if(checked=="true"){
+				oCheck.checked = true;
+			}else if(checked=="false"){
+				oCheck.checked = false;
+			}
+			//console.log(oCheck.checked);
+		}
+		if(oCheck.checked){
+			show();
+		}else{
+			oAbout.onclick = show;
+		}
+		window.addEventListener("unload",function(){
+			setCookie('notice',oCheck.checked,7);
+		},false);
 		oNotice.onwheel = function(e){
 			//alert('hi');
 			e.cancelBubble = true;
@@ -168,7 +244,7 @@ window.onload = function(){
 	
 	//photos
 	(function(){
-		var data = {"title":['Neimeng','Neimeng','Neimeng','Temple','Formal'],"src":['images/photos/photo1.jpg','images/photos/photo2.jpg','images/photos/photo3.jpg','images/photos/photo4.jpg','images/photos/photo5.jpg']};
+		var data = {"title":['Neimeng','Neimeng','Neimeng','Temple','Formal'],"src":['images/pictures/photo1.jpg','images/pictures/photo2.jpg','images/pictures/photo3.jpg','images/pictures/photo4.jpg','images/pictures/photo5.jpg']};
 		var oAlbum = document.getElementById('album');
 		var oUl = oAlbum.getElementsByTagName('ul')[0];
 		var oCover = oAlbum.getElementsByClassName('cover')[0];
@@ -221,8 +297,8 @@ window.onload = function(){
 	//bouncing board
 	(function(){
 		var json = {
-			"title": ['Reactjs pictures1','Reactjs pictures2','Reactjs pictures shuffling','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','end'],
-			"href": ['../reactjs/project1/index.php','../reactjs/project2/index.php','../reactjs/project3/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','end']
+			"title": ['AngularJS pictures','ReactJS pictures1','ReactJS pictures2','ReactJS pictures shuffling','Crowdlinker page(responsive)','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','end'],
+			"href": ['../angularjs/project1/index.php','../reactjs/project1/index.php','../reactjs/project2/index.php','../reactjs/project3/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','end']
 		}
 		
 		var oBox = document.getElementById('bWrap'); 
@@ -255,48 +331,7 @@ window.onload = function(){
 	
 	//balls of pictures
 	(function(){
-		var oPlay = document.getElementById('play');
 		play();
-	})();
-	
-	//cookie for scrollTop
-	(function(){
-		var oScroll = 1;
-		var ratio = 0;
-		//alert(document.cookie);
-		window.onunload = function(){
-			var ratio = controller.ratio;
-			setCookie('ratio',ratio,7);
-		};
-		//alert(document.cookie);
-		function setScroll(scrollTop){
-			document.documentElement.scrollTop = scrollTop;
-			document.body.scrollTop = scrollTop;
-		}
-		if(ratio=getCookie('ratio')){
-			//alert(ratio);
-			setTimeout(function(){
-				oScroll = ratio*document.documentElement.clientHeight+1;
-				setScroll(oScroll);
-			},0);
-		}else{
-			//alert('in');
-			setTimeout(function(){
-				setScroll(1);
-			},0);
-		}
-		window.onpageshow = function(){
-			if(ratio=getCookie('ratio')){
-				oScroll = ratio*document.documentElement.clientHeight+1;
-				setScroll(oScroll);
-			}else{
-				setTimeout(function(){
-					setScroll(1);
-				},0);
-			}
-			//alert('in');
-			//console.log(document.body.scrollTop);
-		}
 	})();
 	
 	//drag second section's cover page
@@ -320,6 +355,11 @@ window.onload = function(){
 		var oDoor = document.getElementById('door');
 		var oPictures = document.getElementById('play');
 		var aEdges = oDoor.getElementsByClassName('edge');
+		var oContact = document.getElementById('li_wrap');
+		var oInfo = document.getElementById('info');
+		var oButtons = document.getElementById('buttons');
+		var oMoon = document.getElementById('moon');
+		var oButtons_2 = document.getElementById('buttons_2');
 		var toggle = true;
 		oBulb.onclick = function onOff(){
 			oBulb.onclick = null;
@@ -330,9 +370,17 @@ window.onload = function(){
 				for(var i=0;i<aEdges.length;i++){
 					aEdges[i].style.boxShadow = "-2px -2px 6px #000 inset"
 				}
-				oDoor.style.background = '#fffd44';
-				oCover.style.background = '#000';
-				oPictures.style.opacity = '0.5';
+				controller.night = true;
+				oButtons_2.style.opacity = '0.6';
+				oInfo.style.opacity = '0.6';
+				oMoon.style.opacity = '1';
+				oAlbum.style.opacity = '0.6';
+				oContact.style.opacity = '0.6';
+				oDoor.style.background = '#f3ea8e';
+				oCover.style.background = '#080800';
+				//oButtons.style.opacity = '0.6';
+				startMove(oButtons,{opacity:60});
+				oPictures.style.opacity = '0.9';
 				oFlare.className = 'flareOn';
 				oGlow.className = 'glowOn';
 				oBulb.onclick = onOff;
@@ -344,12 +392,20 @@ window.onload = function(){
 					aBlocks[2].style.background = '#f8f8f8';
 					oCover.style.background = '#fda';
 					oDoor.style.background = '#000';
+					//oButtons.style.opacity = '1';
+					startMove(oButtons,{opacity:100});
+					oButtons_2.style.opacity = '1';
+					oAlbum.style.opacity = '1';
+					oMoon.style.opacity = '0.4';
 					oPictures.style.opacity = '1';
+					oInfo.style.opacity = '1';
+					oContact.style.opacity = '1';
 					for(var i=0;i<aEdges.length;i++){
 						aEdges[i].style.boxShadow = "2px 2px 6px #000 inset";
 					}
 					oBulb.onclick = onOff;
 				},788);
+				controller.night = false;
 				oFlare.className = 'flareOff';
 				oGlow.className = 'glowOff';
 				toggle = !toggle;
@@ -772,6 +828,7 @@ function doStart(oBox,oButton,oClose,oArrow){
 				oBox.getTop = document.body.scrollTop+document.documentElement.scrollTop+60;
 			};
 			var oCover = oBox.getElementsByClassName('cover')[0];
+			var oImage = oBox.getElementsByTagName('img')[0];
 			oCover.style.display = "block";
 			var edge = 40;
 			var width = oBox.offsetWidth;
@@ -1098,7 +1155,11 @@ function dragBackground(oButtons,oBlock,oButtons_2){
 	function reSet(){
 		window.removeEventListener("scroll",reSet,false);
 		clearInterval(oButtons.timer);
-		oButtons.style.opacity = '1';
+		if(controller.night){
+			oButtons.style.opacity = '0.6';
+		}else{
+			oButtons.style.opacity = '1';
+		}
 		oButtons_2.style.display = 'none';
 		window.addEventListener("keyup",keyboard,false);
 		window.addEventListener("wheel",wheel,false);
@@ -1121,6 +1182,7 @@ function dragBackground(oButtons,oBlock,oButtons_2){
 			//console.log(t+" : "+l+" : "+oButtons_2.offsetLeft+" : "+oBlock.offsetLeft);
 			clearInterval(this.timer);
 			//console.log('s');
+			clearInterval(oButtons.timer);
 			oButtons.style.opacity = '0';
 			oButtons.style.display = 'none';
 			function cancel(){
@@ -1135,18 +1197,27 @@ function dragBackground(oButtons,oBlock,oButtons_2){
 						//console.log(t+" : "+l+" : "+oButtons_2.offsetLeft+" : "+oBlock.offsetLeft);
 					});
 				}else{
+					var op = 100;
 					startMove(oBlock,{left:0},function(){
 						oBlock.removeEventListener("mousedown",handleMouseDown,false);
 						oButtons.style.display = 'block';
+						if(controller.night){
+							op = 0;
+						}else{
+							op = 100;
+						}
 						var t = (oButtons.offsetTop+document.body.scrollTop+document.documentElement.scrollTop)%5;
 						var l = (oButtons.offsetLeft+oBlock.offsetLeft)%5;
 						oButtons.style.backgroundPosition = (-l+1)+"px "+(-t+1)+"px";
 						//console.log(t+" : "+l+" : "+oButtons.offsetLeft+" : "+oBlock.offsetLeft);
 						window.addEventListener("scroll",reSet,false);
-						startMove(oButtons,{opacity:100},function(){
+						startMove(oButtons,{opacity:op},function(){
 							window.removeEventListener("scroll",reSet,false);
-							oButtons_2.style.display = 'none';
 							window.addEventListener("keyup",keyboard,false);
+							oButtons_2.style.display = 'none';
+							if(controller.night){
+								oButtons.style.opacity = '0.6';
+							}
 							window.addEventListener("wheel",wheel,false);
 							oBlock.addEventListener("mousedown",handleMouseDown,false);
 						},8);

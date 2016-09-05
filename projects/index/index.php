@@ -37,13 +37,15 @@ if(!loggedin()){
 <main id="notice" class="hidden">
 	<article>
 		<h1 class="contentH">Hi, this is Bright!</h1>
-		<p class="contentH"><span>Hello, My name is Zhouyang Ye, I'm currently living in Ottawa, this is my personal website and it's still being built.<br/><br/>I am a front-end web developer. I meant to practice and solidify my foundations of web development by building this website, this page is built using PHP, MySQL, pure Javascript, HTML and CSS, without using frameworks or libraries. Everything in this website is my own work, no copy and paste excluding the images and libruaries such as JQuery, React and PDF.js.<br/><br/>If you have any advice on my website or work/project opportunities, please contact me on email <a href="mailto:zye0821@gmail.com">zye0821@gmail.com</a>.<br/><br/>I hope you enjoy my website!</span></p>	
+		<p class="contentH content"><span>Hello, My name is Zhouyang Ye, I'm currently living in Ottawa, this is my personal website and it's still being built.<br/><br/>I am a front-end web developer. I meant to practice and solidify my basic skills of web development by building this website, this page is built using PHP, MySQL, pure Javascript, HTML and CSS, without using frameworks or libraries. Everything in this website is my own work, no copy and paste excluding the images and libruaries such as JQuery, React and PDF.js.<br/><br/>If you have any advice on my website or work/project opportunities, please contact me on email <a href="mailto:zye0821@gmail.com">zye0821@gmail.com</a>.<br/><br/>I hope you enjoy my website!</span></p>	
 	</article>
+	<div class="prop"><p class="prompt">Uncheck it if you don't want this board to show everytime when this page is loaded.</p><div class="arrow"></div></div>
+	<input type="checkbox" checked/>
 	<div class="close">X</div>
 </main>
 <!--notice board end-->
 
-<!--logout-->
+<!--logout door-->
 	<a id="door" href="../../logout.php" target="_self">
 		<div class="pivot"></div>
 		<div class="pivot"></div>
@@ -94,7 +96,7 @@ if(!loggedin()){
 			<div class="road"></div>
 		</div>
 	</a>
-<!--lougout end-->
+<!--lougout door end-->
 
 <!--side board-->
 	<div id="li_wrap">
@@ -171,9 +173,9 @@ if(!loggedin()){
 			<img src="images/next.png" alt=""/>
 		</div>
 		<ul>
-			<li class="middle"><span><img src="images/bg1.jpg" alt=""/></span><div></div><img class="shadow" src="images/shadow.png" alt=""/></li>
-			<li class="left"><span><img src="images/bg2.jpg" alt=""/></span><div></div><img class="shadow" src="images/shadow.png" alt=""/></li>
-			<li class="right"><span><img src="images/bg3.jpg" alt=""/></span><div></div><img class="shadow" src="images/shadow.png" alt=""/></li>
+			<li class="middle"><span><img src="images/pictures/bg1.jpg" alt=""/></span><div></div><img class="shadow" src="images/shadow.png" alt=""/></li>
+			<li class="left"><span><img src="images/pictures/bg2.jpg" alt=""/></span><div></div><img class="shadow" src="images/shadow.png" alt=""/></li>
+			<li class="right"><span><img src="images/pictures/bg3.jpg" alt=""/></span><div></div><img class="shadow" src="images/shadow.png" alt=""/></li>
 		</ul>
 	</div>
 <!--sliding pictures end-->
@@ -181,7 +183,7 @@ if(!loggedin()){
 	<section id="album">
 		<div class="cover"><h3>A l b u m</h3></div>
 		<ul class="pictures">
-			<li><img src="images/photos/photo1.jpg" alt=""/></li>
+			<li><img src="images/pictures/photo1.jpg" alt=""/></li>
 		</ul>
 	</section>
 <!--photo end-->
@@ -196,12 +198,16 @@ if(!loggedin()){
 		<img src="images/pole.png" class="pole" alt=""/>
 	</div>
 <!--bulb and light end-->
+<!--moon-->
+	<img id="moon" src="images/moon.png" alt="moon"/>
+<!--moon end-->
 </section>
 
 <section class="blocks">
 <!--edge-->
 	<div class="topEdge"></div>
 	<div class="bottomEdge"></div>
+	<div class="leftEdge"></div>
 	<div id="buttons_2"></div>
 <!--edge end-->
 </section>

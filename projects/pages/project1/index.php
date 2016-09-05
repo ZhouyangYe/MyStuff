@@ -3,8 +3,6 @@ require '../../../connect.php';
 require '../../../core.php';
 if(!loggedin()){
 	header('Location: ../../../index.php');
-}else if($_SESSION['user_id']!=1){
-	header('Location: ../../error_pages/no_access.html');
 }
 ?>
 
