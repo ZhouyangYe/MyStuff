@@ -17,7 +17,24 @@ li{list-style:none;}
 .blocks:nth-of-type(3){background:#f8f8f8;}
 
 /*background*/
-#moon{position:absolute;top:8px;right:268px;width:418px;height:418px;border-radius:50%;box-shadow:0 0 108px 6px #f5f3b6;opacity:0.4;transition:opacity 0.5s ease;}
+#moon{position:absolute;top:8px;right:268px;width:418px;height:418px;border-radius:50%;box-shadow:0 -2px 108px 6px #f5f3b6;opacity:0.4;transition:opacity 0.5s ease;}
+#water{position:absolute;width:158px;height:236px;right:76px;top:105px;opacity:0.1;transition:opacity 0.5s ease;}
+#inks .ink:nth-of-type(1){position:absolute;width:288px;top:8px;left:0;}
+#inks .ink:nth-of-type(2){position:absolute;width:188px;height:68px;right:-46px;bottom:8px;z-index:11;}
+#inks .ink:nth-of-type(3){position:absolute;left:56px;top:60px;width:188px;}
+#earth{position:absolute;width:218px;height:218px;left:228px;top:335px;box-shadow:0 -2px 108px 6px #524cd5;border-radius:50%;opacity:0.1;transition:opacity 0.5s ease;}
+#planet{position:absolute;width:108px;height:108px;border-radius:50%;top:68px;left:418px;box-shadow:0 0 8px 6px #fff;opacity:0.1;transition:opacity 0.5s ease;}
+#poet{position:absolute;right:358px;bottom:46px;height:168px;opacity:0;transition:opacity 0.5s ease;z-index:9;}
+#poem{position:absolute;right:498px;top:218px;width:426px;opacity:0.1;transition:opacity 0.5s ease;z-index:8;}
+#note{position:absolute;top:232px;left:82px;transition:opacity 0.5s ease;z-index:6;}
+#note .pin{position:absolute;width:36px;left:55px;top:-6px;z-index:2;}
+#note .paper{position:absolute;top:0;left:0;width:136px;transform-origin:57px 23px;z-index:1;}
+#note .swingl1{animation:swingl1 1.8s ease;}
+#note .swingr1{animation:swingr1 1.8s ease;}
+#note .swingl2{animation:swingl2 1.8s ease;}
+#note .swingr2{animation:swingr2 1.8s ease;}
+#rabit{position:absolute;width:168px;top:128px;left:28px;opacity:0.3;transition:opacity 0.5s ease;}
+#cloud{position:absolute;right:258px;top:349px;width:188px;height:58px;opacity:0.1;transition:opacity 0.5s ease;z-index:1;}
 
 /*notice board*/
 #notice{position:fixed;z-index:99;transition:all 3s cubic-bezier(0,0,0.18,1),opacity 2s ease;background:#fff;border-radius:5px;box-shadow:2px 2px 8px #888;}
@@ -119,7 +136,7 @@ li{list-style:none;}
 	50%{opacity:0.2;height:90px;left:-20px;top:-30px;}
 	100%{opacity:1;height:30px;left:0;top:0;}
 }
-#play{width:364px;height:220px;position:absolute;bottom:35px;right:213px;z-index:10;transition:opacity 0.5s ease;}
+#play{width:364px;height:220px;position:absolute;bottom:36px;right:208px;z-index:10;transition:opacity 0.5s ease;}
 #play:hover .prev,#play:hover .next{opacity:0.9;}
 #play ul{position:relative;width:360px;height:220px;margin:0 auto;}
 #play li{position:absolute;}
@@ -190,7 +207,7 @@ li{list-style:none;}
 #roads .road:nth-of-type(3){width:150px;height:8px;top:35px;left:73px;}
 
 /*about me*/
-#info{position:absolute;width:158px;word-spacing:8px;height:50px;font-size:16px;left:49px;top:58px;border:4px solid #665757;border-radius:12px;background:url(../images/under_bg.png) repeat;box-shadow:3px 6px 18px #000 inset;text-shadow:1px 1px 2px #000;text-align:center;overflow:hidden;transition:opacity 0.6s ease;}
+#info{position:absolute;width:158px;word-spacing:8px;height:50px;font-size:16px;left:49px;top:58px;border:4px solid #665757;border-radius:12px;background:url(../images/under_bg.png) repeat;box-shadow:3px 6px 18px #000 inset;text-shadow:1px 1px 2px #000;text-align:center;overflow:hidden;transition:opacity 0.6s ease;z-index:8;}
 #info h3{margin-top:18px;transition:color 1s ease;color:#eee;cursor:pointer;display:inline-block;}
 #info h3:hover{color:#50616d;}
 
@@ -250,7 +267,7 @@ li{list-style:none;}
 	75%{transform:rotate(6deg);}
 	100%{transform:rotate(0deg);}
 }
-#light{position:absolute;right:88px;bottom:46px;height:300px;width:78px;}
+#light{position:absolute;right:88px;bottom:45px;height:300px;width:78px;z-index:8;}
 #light span{display:block;}
 #light .pole{height:100%;width:100%;}
 #light .knot{position:absolute;height:3px;width:36px;border-radius:50%;top:45px;left:7px;background:#111;z-index:8;}

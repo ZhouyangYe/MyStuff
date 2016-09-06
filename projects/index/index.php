@@ -19,8 +19,9 @@ if(!loggedin()){
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
+	<meta charset="utf-8" />
 	<title>yzy Bright ``` Home</title>
+	<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
 	<link type="text/css" href="style/main.css" rel="stylesheet" />
 	<link href="images/icons/bitbug_favicon.ico" rel="shortcut icon" />
 	<base target="_blank" />
@@ -191,15 +192,49 @@ if(!loggedin()){
 	<div id="light">
 		<div class="knot"></div>
 		<div class="combine">
-			<img src="images/bulb.png" class="bulb" alt=""/>
+			<img src="images/bulb.png" class="bulb" alt="" />
 			<div class="wrap"><span class="flareOff"></span><span class="glowOff"></span></div>
 		</div>
 		<div class="cover"></div>
-		<img src="images/pole.png" class="pole" alt=""/>
+		<img src="images/pole.png" class="pole" alt="" />
 	</div>
 <!--bulb and light end-->
+<!--water-->
+	<img id="water" src="images/water.png" alt="water" />
+<!--water end-->
+<!--poet-->
+	<img id="poet" src="images/poet.png" alt="poet" />
+<!--poet end-->
+<!--poem-->
+	<img id="poem" src="images/poem.png" alt="poem" />
+<!--poem end-->
+<!--note-->
+	<div id="note">
+		<img class="pin" src="images/pin.png" alt="pin" />
+		<img class="paper" src="images/note.png" alt="note" />
+	</div>
+<!--note end-->
+<!--rabit-->
+	<img id="rabit" src="images/rabit.png" alt="rabit" />
+<!--rabit end-->
+<!--ink-->
+	<div id="inks">
+		<img class="ink" src="images/ink1.png" alt="ink" />
+		<img class="ink" src="images/ink2.png" alt="ink" />
+		<img class="ink" src="images/ink3.png" alt="ink" />
+	</div>
+<!--ink end-->
+<!--cloud-->
+	<img id="cloud" src="images/cloud.png" alt="cloud" />
+<!--cloud end-->
+<!--planet-->
+	<img id="planet" src="images/planet.png" alt="planet" />
+<!--planet end-->
+<!--earth-->
+	<img id="earth" src="images/earth.png" alt="earth" />
+<!--earth end-->
 <!--moon-->
-	<img id="moon" src="images/moon.png" alt="moon"/>
+	<img id="moon" src="images/moon.png" alt="moon" />
 <!--moon end-->
 </section>
 

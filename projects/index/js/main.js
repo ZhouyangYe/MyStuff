@@ -5,6 +5,7 @@ var controller = {count:((getCookie('ratio')*document.documentElement.clientHeig
 //3.night:used to check if it's of mod night.
 window.onload = function(){
 	setTimeout(function(){
+		//console.log('in');
 		document.documentElement.scrollTop = 1;
 		document.body.scrollTop = 1;
 	},0);
@@ -68,6 +69,12 @@ window.onload = function(){
 			}
 		}
 		window.addEventListener("resize",function(){//handle the reaction to sizes' change of each section and the scroll bar
+			if(document.documentElement.scrollTop<1&&document.body.scrollTop<1){
+				setTimeout(function(){
+					document.documentElement.scrollTop = 1;
+					document.body.scrollTop = 1;
+				},0);
+			}
 			var height = document.documentElement.clientHeight;
 			for(var i=0;i<blocks.length;i++){
 				if(i==0){
@@ -342,6 +349,41 @@ window.onload = function(){
 		dragBackground(oButtons,oBlock,oButtons_2);
 	})();
 	
+	//note paper
+	(function(){
+		var oNote = document.getElementById('note');
+		var oPaper = document.getElementsByClassName('paper')[0];
+		var toggleL = true;
+		var toggleR = true;
+		var left = getLeft(oPaper);
+		//console.log(left);
+		function swing(e){
+			oPaper.onmouseenter = null;
+			setTimeout(function(){
+				oPaper.onmouseenter = swing;
+			},1800);
+			//document.title = e.clientX+" : "+(getLeft(bulb)+15);
+			if(e.clientX>(left+68)){
+				if(toggleL){
+					oPaper.className = "paper swingl1";
+					toggleL = !toggleL;
+				}else{
+					oPaper.className = "paper swingl2";
+					toggleL = !toggleL;
+				}
+			}else{
+				if(toggleR){
+					oPaper.className = "paper swingr1";
+					toggleR = !toggleR;
+				}else{
+					oPaper.className = "paper swingr2";
+					toggleR = !toggleR;
+				}
+			}
+		}
+		oPaper.onmouseenter = swing;
+	})();
+	
 	//bulb and light
 	(function(){
 		var oLight = document.getElementById('light');
@@ -360,6 +402,14 @@ window.onload = function(){
 		var oButtons = document.getElementById('buttons');
 		var oMoon = document.getElementById('moon');
 		var oButtons_2 = document.getElementById('buttons_2');
+		var oWater = document.getElementById('water');
+		var oEarth = document.getElementById('earth');
+		var oPlanet = document.getElementById('planet');
+		var oPoet = document.getElementById('poet');
+		var oPoem = document.getElementById('poem');
+		var oNote = document.getElementById('note');
+		var oCloud = document.getElementById('cloud');
+		var oRabit = document.getElementById('rabit');
 		var toggle = true;
 		oBulb.onclick = function onOff(){
 			oBulb.onclick = null;
@@ -374,13 +424,21 @@ window.onload = function(){
 				oButtons_2.style.opacity = '0.6';
 				oInfo.style.opacity = '0.6';
 				oMoon.style.opacity = '1';
-				oAlbum.style.opacity = '0.6';
+				oEarth.style.opacity = '0.8';
+				oPoem.style.opacity = '0.9';
+				oAlbum.style.opacity = '0';
+				oPlanet.style.opacity = '0.6';
+				oCloud.style.opacity = '0.3';
+				oPoet.style.opacity = '1';
+				oRabit.style.opacity = '0.6';
+				oNote.style.opacity = '0';
+				oWater.style.opacity = '0.9';
 				oContact.style.opacity = '0.6';
 				oDoor.style.background = '#f3ea8e';
 				oCover.style.background = '#080800';
 				//oButtons.style.opacity = '0.6';
 				startMove(oButtons,{opacity:60});
-				oPictures.style.opacity = '0.9';
+				oPictures.style.opacity = '0';
 				oFlare.className = 'flareOn';
 				oGlow.className = 'glowOn';
 				oBulb.onclick = onOff;
@@ -397,8 +455,16 @@ window.onload = function(){
 					oButtons_2.style.opacity = '1';
 					oAlbum.style.opacity = '1';
 					oMoon.style.opacity = '0.4';
+					oPoet.style.opacity = '0';
+					oCloud.style.opacity = '0.1';
+					oWater.style.opacity = '0.1';
+					oPlanet.style.opacity = '0.1';
 					oPictures.style.opacity = '1';
+					oRabit.style.opacity = '0.3';
+					oNote.style.opacity = '1';
+					oEarth.style.opacity = '0.1';
 					oInfo.style.opacity = '1';
+					oPoem.style.opacity = '0.1';
 					oContact.style.opacity = '1';
 					for(var i=0;i<aEdges.length;i++){
 						aEdges[i].style.boxShadow = "2px 2px 6px #000 inset";
