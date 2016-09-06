@@ -4,10 +4,12 @@ var controller = {count:((getCookie('ratio')*document.documentElement.clientHeig
 //2.ratio:used to record which part of the page the user is currently browsing.
 //3.night:used to check if it's of mod night.
 window.onload = function(){
+	//alert(document.documentElement.clientHeight);
 	setTimeout(function(){
 		//console.log('in');
 		document.documentElement.scrollTop = 1;
 		document.body.scrollTop = 1;
+		//console.log(document.body.scrollTop+document.documentElement.scrollTop);
 	},0);
 	
 	//cookie for scrollTop
@@ -55,6 +57,7 @@ window.onload = function(){
 	//the window layout and scroll
 	(function(){
 		var blocks = document.getElementsByClassName("blocks");
+		var aWrap = document.getElementsByClassName("section_wrap");
 		var h = document.documentElement.clientHeight;
 		if(navigator.userAgent.indexOf("Chrome") == -1&&navigator.userAgent.indexOf("Firefox") == -1){
 			alert("Better to be opened on Chrome or Firefox :)");
@@ -64,8 +67,22 @@ window.onload = function(){
 		for(var i=0;i<blocks.length;i++){//initialize the height of each block
 			if(i==0){
 				blocks[i].style.height = (h+1)+"px";
+				if(h>681){
+					aWrap[i].style.height = 682+"px";
+					aWrap[i].style.top = (h/2-341)+"px";
+				}else{
+					aWrap[i].style.height = (h+1)+"px";
+					aWrap[i].style.top = 0+"px";
+				}
 			}else{
 				blocks[i].style.height = h+"px";
+				if(h>681){
+					aWrap[i].style.height = 681+"px";
+					aWrap[i].style.top = (h/2-341)+"px";
+				}else{
+					aWrap[i].style.height = h+"px";
+					aWrap[i].style.top = 0+"px";
+				}
 			}
 		}
 		window.addEventListener("resize",function(){//handle the reaction to sizes' change of each section and the scroll bar
@@ -79,8 +96,22 @@ window.onload = function(){
 			for(var i=0;i<blocks.length;i++){
 				if(i==0){
 					blocks[i].style.height = (height+1)+"px";
+					if(height>681){
+						aWrap[i].style.height = 682+"px";
+						aWrap[i].style.top = (height/2-341)+"px";
+					}else{
+						aWrap[i].style.height = (height+1)+"px";
+						aWrap[i].style.top = 0+"px";
+					}
 				}else{
 					blocks[i].style.height = height+"px";
+					if(height>681){
+						aWrap[i].style.height = 681+"px";
+						aWrap[i].style.top = (height/2-341)+"px";
+					}else{
+						aWrap[i].style.height = height+"px";
+						aWrap[i].style.top = 0+"px";
+					}
 				}
 			}
 			window.removeEventListener("keyup",keyboard,false);
@@ -128,7 +159,7 @@ window.onload = function(){
 			if(document.body.scrollTop<1&&document.documentElement.scrollTop<1){
 				document.body.scrollTop = 1;
 				document.documentElement.scrollTop = 1;
-				//alert('in');
+				//console.log('in');
 			}
 			updateLight(aLights);
 		},false);
@@ -270,10 +301,10 @@ window.onload = function(){
 			aLi.push(oLi);
 		}
 		oAlbum.onmouseenter = function(){
-			startMove(oCover,{"top":-586},null,6);
+			startMove(oCover,{"top":-631},null,6);
 		};
 		oAlbum.onmouseleave = function(){
-			startMove(oCover,{"top":0},function(){
+			startMove(oCover,{"top":-49},function(){
 				iNow++;
 				if(iNow>=aLi.length){
 					iNow = 0;
@@ -355,9 +386,9 @@ window.onload = function(){
 		var oPaper = document.getElementsByClassName('paper')[0];
 		var toggleL = true;
 		var toggleR = true;
-		var left = getLeft(oPaper);
 		//console.log(left);
 		function swing(e){
+			var left = getLeft(oPaper);
 			oPaper.onmouseenter = null;
 			setTimeout(function(){
 				oPaper.onmouseenter = swing;
@@ -487,8 +518,8 @@ window.onload = function(){
 		}*/
 		var toggleL = true;
 		var toggleR = true;
-		var left = getLeft(bulb);
 		function swing(e){
+			var left = getLeft(bulb);
 			//document.title = e.clientX+" : "+(getLeft(bulb)+15);
 			if(e.clientX>(left+15)){
 				if(toggleL){

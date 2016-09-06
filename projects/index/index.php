@@ -21,7 +21,6 @@ if(!loggedin()){
 <head>
 	<meta charset="utf-8" />
 	<title>yzy Bright ``` Home</title>
-	<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
 	<link type="text/css" href="style/main.css" rel="stylesheet" />
 	<link href="images/icons/bitbug_favicon.ico" rel="shortcut icon" />
 	<base target="_blank" />
@@ -160,6 +159,7 @@ if(!loggedin()){
 <!--bouncing board end-->
 
 <section class="blocks">
+<div class="section_wrap">
 <!--about me-->
 	<div id="info"><h3>About me</h3></div>
 <!--about me end-->
@@ -236,6 +236,7 @@ if(!loggedin()){
 <!--moon-->
 	<img id="moon" src="images/moon.png" alt="moon" />
 <!--moon end-->
+</div>
 </section>
 
 <section class="blocks">
@@ -245,10 +246,16 @@ if(!loggedin()){
 	<div class="leftEdge"></div>
 	<div id="buttons_2"></div>
 <!--edge end-->
+<div class="section_wrap">
+</div>
 </section>
 
 <section class="blocks">
+<div class="section_wrap">
+</div>
+<!--footer-->
 	<footer id="main_footer"><p>@Zhouyang Ye 2016</p>&nbsp;&nbsp;&nbsp;<a href="http://zhouyangbt.ca" target="_self">zhouyangbt.ca</a></footer>
+<!--footer end-->
 </section>
 </body>
 </html>

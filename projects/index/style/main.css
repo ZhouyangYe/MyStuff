@@ -15,6 +15,7 @@ li{list-style:none;}
 .blocks:nth-of-type(1){background:#fda;box-shadow:12px 8px 36px #000;}
 .blocks:nth-of-type(2){background:#3eede7;box-shadow:3px 8px 18px #000;cursor:pointer;}
 .blocks:nth-of-type(3){background:#f8f8f8;}
+.section_wrap{position:relative;max-width:1350px;max-height:682px;margin:0 auto;}
 
 /*background*/
 #moon{position:absolute;top:8px;right:268px;width:418px;height:418px;border-radius:50%;box-shadow:0 -2px 108px 6px #f5f3b6;opacity:0.4;transition:opacity 0.5s ease;}
@@ -217,8 +218,8 @@ li{list-style:none;}
 #album .pictures:before{content:"";display:table;}
 #album li{position:absolute;top:11px;left:10px;width:308px;height:486px;border-radius:0px;background:#f00;overflow:hidden;display:none;}
 #album img{height:100%;width:100%;}
-#album .cover{position:absolute;width:428px;height:600px;left:-14px;top:0;background:#fda;border:1px solid rgba(255,255,255,0.1);border-bottom:2px solid rgba(255,255,255,0.1);border-bottom-left-radius:18px;border-bottom-right-radius:18px;z-index:8;box-shadow:1px 1px 18px rgba(0,0,0,0.1);text-align:center;transition:background 0.5s ease;z-index:90;}
-#album h3{font-size:28px;font-family:Times;font-weight:normal;display:inline-block;padding-top:288px;color:#f2be45;}
+#album .cover{position:absolute;width:428px;height:646px;left:-14px;top:-49px;background:#fda;border:1px solid rgba(255,255,255,0.1);border-bottom:2px solid rgba(255,255,255,0.1);border-bottom-left-radius:18px;border-bottom-right-radius:18px;z-index:8;box-shadow:1px 1px 18px rgba(0,0,0,0.1);text-align:center;transition:background 0.5s ease;z-index:90;}
+#album h3{font-size:28px;font-family:Times;font-weight:normal;display:inline-block;padding-top:339px;color:#f2be45;}
 
 /*footer*/
 #main_footer{position:absolute;bottom:8px;right:23px;font-size:15px;color:#c2ccd0;text-shadow:1px 1px 1px #000;}
