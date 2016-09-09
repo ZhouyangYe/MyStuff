@@ -23,7 +23,7 @@ function ajax(method, url, data, success) {
 		
 		if ( xhr.readyState == 4 ) {
 			if ( xhr.status == 200 ) {
-				success && success(xhr.responseText);
+				success(xhr.responseText);
 			} else {
 				alert('Something went wrong,Err：' + xhr.status);
 			}
