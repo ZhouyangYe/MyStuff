@@ -31,12 +31,23 @@
 		}
 	}
 	function progress(){
-		console.log('in');
+		//console.log('in');
 		var length = oProgressbar.clientWidth;
 		var percent = Math.round(count/total*100);
 		var current = Math.round(count/total*length);
 		oInner.style.clip = 'rect(0,'+current+'px,32px,0)';
-		aSpan[0].innerHTML = percent+"%";
-		aSpan[1].innerHTML = percent+"%";
+		var num = parseInt(aSpan[0].innerHTML);
+		clearInterval(oProgressbar.timer);
+		oProgressbar.timer = setInterval(function(){
+			if(num<percent){
+				aSpan[0].innerHTML = num+"%";
+				aSpan[1].innerHTML = num+"%";
+				num += 3;
+			}else{
+				num = percent;
+				aSpan[0].innerHTML = num+"%";
+				aSpan[1].innerHTML = num+"%";
+			}
+		},18);
 	}
 })();

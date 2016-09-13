@@ -38,7 +38,7 @@ if(!loggedin()){
 <main id="notice" class="hidden">
 	<article>
 		<h1 class="contentH">Hi, this is Bright!</h1>
-		<p class="contentH content"><span>Hello, My name is Zhouyang Ye, I'm currently living in Ottawa, this is my personal website and it's still being built.<br/><br/>I am a front-end web developer. I meant to practice and solidify my basic skills of web development by building this website, this page is built using PHP, MySQL, pure Javascript, HTML and CSS, without using frameworks or libraries. Everything in this website is my own work, no copy and paste excluding the images and libruaries such as JQuery, React and PDF.js.<br/><br/>If you have any advice on my website or work/project opportunities, please contact me on email <a href="mailto:zye0821@gmail.com">zye0821@gmail.com</a>.<br/><br/>I hope you enjoy my website!</span></p>	
+		<p class="contentH content"><span>Hello, My name is Zhouyang Ye, I'm currently living in Ottawa, this is my personal website and it's still being built.<br/><br/>I am a front-end web developer. I meant to practice and solidify my basic skills of web development by building this website, this page is built using PHP, MySQL, pure Javascript, HTML and CSS, without using frameworks or libraries. Everything in this website is my own work, no copy and paste excluding the images and libruaries such as JQuery, React and PDF.js.<br/><br/>This page is responsive.<br/><br/>If you have any advice on my website or work/project opportunities, please contact me on email <a href="mailto:zye0821@gmail.com">zye0821@gmail.com</a>.<br/><br/>I hope you enjoy my website!</span></p>	
 	</article>
 	<div class="prop"><p class="prompt">Uncheck it if you don't want this board to show everytime when this page is loaded.</p><div class="arrow"></div></div>
 	<input type="checkbox" checked/>
@@ -84,7 +84,6 @@ if(!loggedin()){
 				<div class="overlap"></div>
 				<div class="overlap"></div>
 			</div>
-			<div class="lEdge"></div>
 			<div class="lEdge"></div>
 			<div class="tEdge"></div>
 			<div class="handler"></div>
@@ -160,7 +159,6 @@ if(!loggedin()){
 <!--bouncing board end-->
 
 <section class="blocks">
-<div class="section_wrap">
 <!--about me-->
 	<div id="info"><h3>About me</h3></div>
 <!--about me end-->
@@ -237,7 +235,6 @@ if(!loggedin()){
 <!--moon-->
 	<img id="moon" src="images/moon.png" alt="moon" />
 <!--moon end-->
-</div>
 </section>
 
 <section class="blocks">
@@ -247,13 +244,12 @@ if(!loggedin()){
 	<div class="leftEdge"></div>
 	<div id="buttons_2"></div>
 <!--edge end-->
-<div class="section_wrap">
-</div>
+<!--drag logo-->
+	<div id="drag"><span>d</span><span>r</span><span>a</span><span>g</span></div>
+<!--drag logo end-->
 </section>
 
 <section class="blocks">
-<div class="section_wrap">
-</div>
 <!--footer-->
 	<footer id="main_footer"><p>@Zhouyang Ye 2016</p>&nbsp;&nbsp;&nbsp;<a href="http://zhouyangbt.ca" target="_self">zhouyangbt.ca</a></footer>
 <!--footer end-->

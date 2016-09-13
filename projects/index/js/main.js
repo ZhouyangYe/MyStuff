@@ -1,9 +1,14 @@
 "use strict";
-var controller = {count:((getCookie('ratio')*document.documentElement.clientHeight+1)||1),ratio:(getCookie('ratio')||0),night:false};//used to store global values.
+var controller = {count:((getCookie('ratio')*document.documentElement.clientHeight+1)||1),ratio:(getCookie('ratio')||0),night:false,def:1};//used to store global values.
 //1.count:used to record value of window's scrollTop.
 //2.ratio:used to record which part of the page the user is currently browsing.
 //3.night:used to check if it's of mod night.
+//4.def: used to record the defalut font size of root element.
 window.onload = function(){
+	//console.log(getComputedStyle(document.documentElement,null).getPropertyValue('font-size'));
+	document.documentElement.style.fontSize = Math.round(document.documentElement.clientHeight/681*10)+'px';
+	controller.def = parseInt(getComputedStyle(document.documentElement,null).getPropertyValue('font-size'));
+	//console.log(Math.round(document.documentElement.clientHeight/681*10));
 	//alert(document.documentElement.clientHeight);
 	setTimeout(function(){
 		//console.log('in');
@@ -57,8 +62,8 @@ window.onload = function(){
 	//the window layout and scroll
 	(function(){
 		var blocks = document.getElementsByClassName("blocks");
-		var aWrap = document.getElementsByClassName("section_wrap");
 		var h = document.documentElement.clientHeight;
+		//console.log(h);
 		if(navigator.userAgent.indexOf("Chrome") == -1&&navigator.userAgent.indexOf("Firefox") == -1){
 			alert("Better to be opened on Chrome or Firefox :)");
 		}
@@ -67,22 +72,8 @@ window.onload = function(){
 		for(var i=0;i<blocks.length;i++){//initialize the height of each block
 			if(i==0){
 				blocks[i].style.height = (h+1)+"px";
-				if(h>681){
-					aWrap[i].style.height = 682+"px";
-					aWrap[i].style.top = (h/2-341)+"px";
-				}else{
-					aWrap[i].style.height = (h+1)+"px";
-					aWrap[i].style.top = 0+"px";
-				}
 			}else{
 				blocks[i].style.height = h+"px";
-				if(h>681){
-					aWrap[i].style.height = 681+"px";
-					aWrap[i].style.top = (h/2-341)+"px";
-				}else{
-					aWrap[i].style.height = h+"px";
-					aWrap[i].style.top = 0+"px";
-				}
 			}
 		}
 		window.addEventListener("resize",function(){//handle the reaction to sizes' change of each section and the scroll bar
@@ -92,26 +83,14 @@ window.onload = function(){
 					document.body.scrollTop = 1;
 				},0);
 			}
+			document.documentElement.style.fontSize = Math.round(document.documentElement.clientHeight/681*10)+'px';
+			controller.def = parseInt(getComputedStyle(document.documentElement,null).getPropertyValue('font-size'));
 			var height = document.documentElement.clientHeight;
 			for(var i=0;i<blocks.length;i++){
 				if(i==0){
 					blocks[i].style.height = (height+1)+"px";
-					if(height>681){
-						aWrap[i].style.height = 682+"px";
-						aWrap[i].style.top = (height/2-341)+"px";
-					}else{
-						aWrap[i].style.height = (height+1)+"px";
-						aWrap[i].style.top = 0+"px";
-					}
 				}else{
 					blocks[i].style.height = height+"px";
-					if(height>681){
-						aWrap[i].style.height = 681+"px";
-						aWrap[i].style.top = (height/2-341)+"px";
-					}else{
-						aWrap[i].style.height = height+"px";
-						aWrap[i].style.top = 0+"px";
-					}
 				}
 			}
 			window.removeEventListener("keyup",keyboard,false);
@@ -300,6 +279,9 @@ window.onload = function(){
 			}
 			aLi.push(oLi);
 		}
+		window.addEventListener('resize',function(){
+			startMove(oCover,{"top":-49},null,6);
+		},false);
 		oAlbum.onmouseenter = function(){
 			startMove(oCover,{"top":-631},null,6);
 		};
@@ -326,8 +308,8 @@ window.onload = function(){
 		var aList = oList.getElementsByTagName("div");
 		var oH3 = oList.getElementsByTagName('h3')[0];
 		var oWrap = document.getElementById('li_wrap');
-		oWrap.style.width = oH3.offsetWidth+"px";
-		oWrap.style.height = (oH3.offsetHeight+60)+"px";
+		oWrap.style.width = oH3.offsetWidth/controller.def+"rem";
+		oWrap.style.height = (oH3.offsetHeight+60)/controller.def+"rem";
 		doScroll(oWrap,oList,aList,oH3);
 		doRotate(oWrap,oList);
 	})();
@@ -338,7 +320,6 @@ window.onload = function(){
 			"title": ['AngularJS pictures','ReactJS pictures1','ReactJS pictures2','ReactJS pictures shuffling','Crowdlinker page(responsive)','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','Crowdlinker page','100Du page','Ecommerce page','Radial page','Webgl room','3D Tank','end'],
 			"href": ['../angularjs/project1/index.php','../reactjs/project1/index.php','../reactjs/project2/index.php','../reactjs/project3/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','../pages/project1/index.php','../pages/project2/index.php','../pages/project3/index.php','../pages/project4/index.php','../fun/room/index.php','../fun/tank/index.php','end']
 		}
-		
 		var oBox = document.getElementById('bWrap'); 
 		var oButton = oBox.getElementsByClassName('side')[0];
 		var oClose = oBox.getElementsByClassName('close')[0];
@@ -351,7 +332,7 @@ window.onload = function(){
 		oButton.cancelBubble = true;
 		oBox.getTop = document.body.scrollTop+document.documentElement.scrollTop+60;
 		//console.log(oBox.getTop);
-		oBox.style.top = oBox.getTop+"px";
+		oBox.style.top = oBox.getTop*controller.def/10+"px";
 		doToggle(oBox,oButton,oArrow);
 		doStart(oBox,oButton,oClose,oArrow);
 		oClose.onmousedown = function(e){
@@ -449,7 +430,7 @@ window.onload = function(){
 					aBlocks[i].style.background = '#000';
 				}
 				for(var i=0;i<aEdges.length;i++){
-					aEdges[i].style.boxShadow = "-2px -2px 6px #000 inset"
+					aEdges[i].style.boxShadow = "-0.2rem -0.2rem 0.6rem #000 inset"
 				}
 				controller.night = true;
 				oButtons_2.style.opacity = '0.6';
@@ -498,7 +479,7 @@ window.onload = function(){
 					oPoem.style.opacity = '0.1';
 					oContact.style.opacity = '1';
 					for(var i=0;i<aEdges.length;i++){
-						aEdges[i].style.boxShadow = "2px 2px 6px #000 inset";
+						aEdges[i].style.boxShadow = "0.2rem 0.2rem 0.6rem #000 inset";
 					}
 					oBulb.onclick = onOff;
 				},788);
@@ -540,6 +521,11 @@ window.onload = function(){
 			}
 		}
 		oBulb.onmouseenter = swing;
+	})();
+	
+	//jokes
+	(function(){
+		
 	})();
 };
 
@@ -721,7 +707,8 @@ function doScroll(oWrap,oList,aList,oH3){
 	var oTimer = null;
 	oList.onmouseenter = function(){
 		//console.log('in');
-		oWrap.style.height = (aList.length*(aList[0].offsetHeight+4)+oH3.offsetHeight+30)+"px";
+		oWrap.style.height = (aList.length*(aList[0].offsetHeight+4*controller.def/10)+oH3.offsetHeight+30*controller.def/10)/controller.def+'rem';
+		//document.title = controller.def/10;
 		if(oTimer){
 			clearInterval(oTimer);
 		}
@@ -749,7 +736,7 @@ function doScroll(oWrap,oList,aList,oH3){
 	};
 	
 	oWrap.addEventListener("mouseleave",function(){
-		oWrap.style.height = (oH3.offsetHeight+60)+"px";
+		oWrap.style.height = (oH3.offsetHeight+60*controller.def/10)/controller.def+'rem';
 		if(oTimer){
 			clearInterval(oTimer);
 			//alert('yea');
@@ -774,7 +761,9 @@ function doScroll(oWrap,oList,aList,oH3){
 }
 
 function doRotate(oWrap,oList){
+	var timer = null;
 	oWrap.onmouseenter = function(){
+		clearTimeout(timer);
 		oWrap.onmousemove = function(ev){
 			ev = ev||window.event;
 			var l = ev.clientX - oWrap.offsetLeft;
@@ -787,7 +776,7 @@ function doRotate(oWrap,oList){
 	};
 	oWrap.addEventListener("mouseleave",function(){
 		oWrap.onmousemove = null;
-		setTimeout(function(){
+		timer = setTimeout(function(){
 			oList.style.cssText = "transform:rotateY("+0+"deg);transition:transform 1.2s ease;";
 		},1000);
 	},false);
@@ -888,16 +877,18 @@ function doBounce(oBox){
 		if(Math.abs(oBox.speedY)<1){
 			oBox.speedY = 0;
 		}
+		//console.log(t+" : "+topMost+" : "+oBox.speedY+" : "+oBox.speedX+" : "+gravity);
 		if(t==topMost&&oBox.speedY==0&&oBox.speedX==0){
 			clearInterval(oBox.timer);
-			//document.title += 1;
-			//console.log(t+" : "+(document.documentElement.clientHeight+document.documentElement.scrollTop+document.body.scrollTop-oBox.offsetHeight));
+			//document.title = l;
 			//console.log('stopped1');
+			//alert('stopped1');
 		}
-		oBox.style.left = l+"px";
-		oBox.style.top = t+"px";
+		oBox.style.left = l/controller.def+"rem";
+		oBox.style.top = t/controller.def+"rem";
 	},30);
 }
+
 
 function doStart(oBox,oButton,oClose,oArrow){
 	clearInterval(oBox.timer);
@@ -906,7 +897,7 @@ function doStart(oBox,oButton,oClose,oArrow){
 			if(oBox.init){
 				oBox.init = false;
 			}
-			oBox.style.boxShadow = "0 0 10px #888";
+			oBox.style.boxShadow = "0 0 1rem #888";
 			oButton.onclick = null;
 			oBox.mode = 'show';
 			doStart(oBox,oButton,oClose,oArrow);
@@ -914,7 +905,8 @@ function doStart(oBox,oButton,oClose,oArrow){
 		if(oBox.init){
 			window.onscroll = function(){
 				oBox.getTop = document.body.scrollTop+document.documentElement.scrollTop+60;
-				startMove(oBox,{"top":oBox.getTop});
+				var gt = (oBox.getTop-60)*10/controller.def+60;
+				startMove(oBox,{"top":gt});
 			};
 		}
 		if(!oBox.init){
@@ -928,19 +920,24 @@ function doStart(oBox,oButton,oClose,oArrow){
 			var oImage = oBox.getElementsByTagName('img')[0];
 			oCover.style.display = "block";
 			var edge = 40;
+			//document.title = controller.def;
 			var width = oBox.offsetWidth;
-			var bLeft = oBox.offsetLeft+(width-edge)/2;
-			var bTop = oBox.offsetTop+(width-edge)/2;
+			var bLeft = (oBox.offsetLeft+(width-edge)/2)*10/controller.def;
+			var bTop = (oBox.offsetTop+(width-edge)/2)*10/controller.def;
+			//document.title = controller.def;
+			//console.log(bLeft+' : '+bTop);
 			startMove(oBox,{"width":edge,"height":edge,"left":bLeft,"top":bTop,"opacity":20},function(){
-				startMove(oBox,{"top":(oBox.getTop+84),"left":-50},function(){
-					oBox.style.cssText = "width:300px;height:300px;top:"+oBox.getTop+"px;left:-320px;";
+				var gt = (oBox.getTop-60)*10/controller.def+60;
+				startMove(oBox,{"top":(gt+84),"left":-50},function(){
+					oBox.style.cssText = "width:30rem;height:30rem;top:"+gt/10+"rem;left:-32rem;";
 					oCover.style.display = "none";
 					oButton.style.display = "block";
 					doToggle(oBox,oButton,oArrow);
 					oArrow.style.display = "block";
 					window.onscroll = function(){
 						oBox.getTop = document.body.scrollTop+document.documentElement.scrollTop+60;
-						startMove(oBox,{"top":oBox.getTop});
+						var gt = (oBox.getTop-60)*10/controller.def+60;
+						startMove(oBox,{"top":gt});
 					};
 				});
 			});
@@ -959,13 +956,14 @@ function doStart(oBox,oButton,oClose,oArrow){
 		var l = oBox.offsetLeft;
 		oBox.speedX = 0;
 		var accelor = 0.05;
-		
+		//console.log(accelor+" : "+controller.def/10);
 		var obj = oButton;
 		var arr = [];
 		var num = 0;
 		var bTop = oButton.offsetTop;
 		for(var i=10;i>=0;i-=1){
-			arr.push(i,-i);
+			var j = i*controller.def/10;
+			arr.push(j,-j);
 		}
 		clearInterval(obj.shake);
 		obj.shake = setInterval(function(){
@@ -992,11 +990,11 @@ function doStart(oBox,oButton,oClose,oArrow){
 						}
 						oBox.speedX += accelor;
 						l += oBox.speedX;
-						oBox.style.left = l+"px";
+						oBox.style.left = l/controller.def+"rem";
 					},20);
 				});
 			}else{
-				obj.style.top = (bTop+arr[num])+"px";
+				obj.style.top = (bTop+arr[num])/controller.def+"rem";
 				num++;
 			}
 		},30);
@@ -1155,7 +1153,7 @@ function page_callback(nowPage,data,oUl){
 			oDiv.appendChild(oA);
 			oLi.appendChild(oDiv);
 			oUl.appendChild(oLi);
-			oDiv.style.top = (-oLi.offsetHeight)+'px';
+			oDiv.style.top = (-oLi.offsetHeight)/controller.def+'rem';
 		}
 	}else{
 		var aLi = oUl.getElementsByTagName('li');
@@ -1170,7 +1168,7 @@ function page_callback(nowPage,data,oUl){
 				aA[0].setAttribute('href','javascript:;');
 				aA[0].innerHTML = '';
 			}else{
-				oDiv.style.top = (-height)+'px';
+				oDiv.style.top = (-height)/controller.def+'rem';
 				aA[0].setAttribute('href',data.href[(nowPage-1)*5+i]);
 				aA[0].innerHTML = data.title[(nowPage-1)*5+i];
 			}
@@ -1185,7 +1183,7 @@ function page_callback(nowPage,data,oUl){
 					aA[1].setAttribute('href',aA[0].getAttribute('href')); 
 					aA[1].setAttribute('target',aA[0].getAttribute('target'));
 					aA[1].innerHTML = aA[0].innerHTML;
-					this.style.top = (-height)+"px";
+					this.style.top = (-height)/controller.def+'rem';
 				});
 				currentLi++;
 			}
@@ -1201,7 +1199,8 @@ function dragBackground(oButtons,oBlock,oButtons_2){
 	oButtons.style.backgroundPosition = (-l+1)+"px "+(-t+1)+"px";
 	window.addEventListener("scroll",function(){
 		if(oBlock.offsetLeft<0){
-			startMove(oBlock,{left:-(document.documentElement.clientWidth-249)},function(){
+			var scrollLeft = document.documentElement.clientWidth*10/controller.def-249;
+			startMove(oBlock,{left:-scrollLeft},function(){
 				setTimeout(function(){
 					var t = (oButtons_2.offsetTop+document.body.scrollTop+document.documentElement.scrollTop)%5;
 					var l = (oButtons_2.offsetLeft+oBlock.offsetLeft)%5;
@@ -1218,9 +1217,13 @@ function dragBackground(oButtons,oBlock,oButtons_2){
 			},0);
 		}
 	},false);
+	//console.log('in');
 	window.addEventListener("resize",function(){
+		var scrollLeft = document.documentElement.clientWidth*10/controller.def-249;
+		//console.log(document.documentElement.clientWidth-249*10/controller.def);
+		//console.log(document.documentElement.clientWidth);
 		if(oBlock.offsetLeft<0){
-			startMove(oBlock,{left:-(document.documentElement.clientWidth-249)},function(){
+			startMove(oBlock,{left:-scrollLeft},function(){
 				setTimeout(function(){
 					var t = (oButtons_2.offsetTop+document.body.scrollTop+document.documentElement.scrollTop)%5;
 					var l = (oButtons_2.offsetLeft+oBlock.offsetLeft)%5;
@@ -1285,7 +1288,8 @@ function dragBackground(oButtons,oBlock,oButtons_2){
 			function cancel(){
 				//console.log('in');
 				if(oBlock.offsetLeft<-(document.documentElement.clientWidth/2)){
-					startMove(oBlock,{left:-(document.documentElement.clientWidth-249)},function(){
+					var scrollLeft = document.documentElement.clientWidth*10/controller.def-249;
+					startMove(oBlock,{left:-scrollLeft},function(){
 						window.addEventListener("keyup",keyboard,false);
 						window.addEventListener("wheel",wheel,false);
 						var t = (oButtons_2.offsetTop+document.body.scrollTop+document.documentElement.scrollTop)%5;

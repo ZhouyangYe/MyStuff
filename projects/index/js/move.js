@@ -1,12 +1,23 @@
 "use strict";
+//var count = 0;
 function startMove(obj,json,endFn,speed){
+		//var def = parseInt(getComputedStyle(document.documentElement,null).getPropertyValue('font-size'));
+		var destination = {};
+		for(var attr in json){
+			if(attr!='opacity'&&attr!='scrollTop'){
+				json[attr] = Math.floor(json[attr]*controller.def/10);
+				//console.log(json[attr]);
+			}
+		}
 		//console.log('running');
+		//console.log(def);
 		clearInterval(obj.timer);
 		
 		var speed = speed?speed:3;
 		
 		obj.timer = setInterval(function(){
 			var bBtn = true;
+			//def = parseInt(getComputedStyle(document.documentElement,null).getPropertyValue('font-size'));
 			for(var attr in json){
 				
 				var iCur = 0;
@@ -17,8 +28,7 @@ function startMove(obj,json,endFn,speed){
 				}else if(attr == 'scrollTop'){
 					iCur = Math.floor(obj.scrollTop);
 					//console.log(iCur);
-				}
-				else{
+				}else{
 					iCur = parseInt(getStyle(obj,attr)) || 0;
 				}
 				
@@ -51,6 +61,13 @@ function startMove(obj,json,endFn,speed){
 			if(bBtn){
 				clearInterval(obj.timer);
 				//console.log(iCur);
+				for(var attr in json){
+					if(attr!='opacity'&&attr!='scrollTop'){
+						//console.log(obj.style[attr]);
+						obj.style[attr] = parseInt(obj.style[attr])/controller.def+'rem';
+						//console.log(obj.style[attr]);
+					}
+				}
 				if(endFn){
 					endFn.call(obj);
 				}
