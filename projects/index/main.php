@@ -245,7 +245,7 @@ if(!loggedin()){
 	<div id="buttons_2"></div>
 <!--edge end-->
 <!--drag logo-->
-	<div id="drag"><span>d</span><span>r</span><span>a</span><span>g</span></div>
+	<div id="drag"><span>d</span><span>r</span><span>a</span><span>g</span><span>&lt;</span><span>&minus;</span><span>&minus;</span><span>&loz;</span></div>
 <!--drag logo end-->
 </section>
 

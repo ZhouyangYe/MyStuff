@@ -934,6 +934,9 @@ function doStart(oBox,oButton,oClose,oArrow){
 					oButton.style.display = "block";
 					doToggle(oBox,oButton,oArrow);
 					oArrow.style.display = "block";
+					oBox.getTop = document.body.scrollTop+document.documentElement.scrollTop+60;
+					var gt2 = (oBox.getTop-60)*10/controller.def+60;
+					startMove(oBox,{"top":gt2});
 					window.onscroll = function(){
 						oBox.getTop = document.body.scrollTop+document.documentElement.scrollTop+60;
 						var gt = (oBox.getTop-60)*10/controller.def+60;

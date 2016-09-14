@@ -1,10 +1,10 @@
 @media screen and (min-width:1350px){
-	#big_wrapper{width:135rem;margin:0 auto;}
+	#big_wrapper{max-width:135rem;margin:0 auto;}
 }
 
 
 @media screen and (max-width:1254px){
-	#license_wrapper .frame{width:80rem;margin:0 auto;}
+	#license_wrapper .frame{max-width:80rem;margin:0 auto;}
 	#footer a{margin:0 1.5rem;}
 	#footer .nav{width:42rem;}
 }
