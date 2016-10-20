@@ -1,4 +1,4 @@
-body,ul,p,h1,h2,h3,h4,dl,dd,form,input ,a,button{padding:0; margin:0;}
+html,body,ul,p,h1,h2,h3,h4,dl,dd,form,input ,a,button{padding:0; margin:0;}
 html{font-size:10px;}
 body{font-family:Tahoma;background:url(../images/under_bg.png) 0 0 repeat;}
 body:after{content:"";display:table;clear:both;}
@@ -61,7 +61,7 @@ li{list-style:none;}
 .contentH{opacity:0;}
 
 /*lights buttons*/
-#buttons{position:fixed;height:14.5rem;width:3.2rem;right:0;top:calc(50% - 10.8rem);background:url(../images/under_bg.png) repeat;border-top-left-radius:1.2rem;border-bottom-left-radius:1.2rem;z-index:98;border:0.4rem solid #665757;border-right:none;box-shadow:0.3rem 0.6rem 1.8rem #000 inset;}
+#buttons{position:fixed;height:14.5rem;width:3.2rem;right:0;top:calc(50% - 10.8rem);background:url(../images/under_bg.png) repeat;border-top-left-radius:1.2rem;border-bottom-left-radius:1.2rem;z-index:96;border:0.4rem solid #665757;border-right:none;box-shadow:0.3rem 0.6rem 1.8rem #000 inset;}
 #buttons .button{position:relative;width:1.8rem;height:1.8rem;margin:2.3rem 0 0 0.8rem;border-radius:1.8rem;background:#eee;transition:background 1s ease;box-shadow:0.1rem 0.1rem 0.2rem #000;cursor:pointer;}
 #buttons .button:nth-of-type(1){background:#50616d;}
 #buttons .button div{position:absolute;width:1.8rem;height:1.8rem;background:transparent;border-radius:1.8rem;top:0;left:0;transition:background 1s ease;}
@@ -79,7 +79,7 @@ li{list-style:none;}
 	0%{transform:rotateX(0deg);}
 	100%{transform:rotateX(-180deg);}
 }
-#li_wrap{position:fixed;top:0;right:4rem;perspective:80rem;perspective-origin:right top;z-index:92;transition:opacity 0.5s ease;}
+#li_wrap{position:fixed;top:0;right:4rem;perspective:80rem;perspective-origin:right top;z-index:98;transition:opacity 0.5s ease;}
 #list{position:relative;font-size:1.4rem;float:right;top:3.2rem;right:0;transform-origin:50% 0 0;transform-style:preserve-3d;transition:all 0.2s ease;}
 #list div,#list .strip{position:absolute;cursor:pointer;}
 #list div{line-height:4rem;text-align:center;background:rgba(255,255,255,0.9);top:4.4rem;width:20rem;height:4rem;transition:background 0.4s ease,box-shadow 1s ease;transform-origin:top;transform:rotateX(-180deg);transform-style:preserve-3d;box-shadow:inset 0 0 0 2rem rgba(130,130,130,1);}
@@ -108,13 +108,13 @@ li{list-style:none;}
 	85%{opacity:0;}
 	100%{opacity:1;}
 }
-#bWrap{position:absolute;width:30rem;height:30rem;top:6rem;left:-32rem;border-radius:0.8rem;box-shadow:0 0 1rem #888;z-index:90;transition:box-shadow 0.5s ease;font-size:1.6rem;text-indent:0.2rem;}
+#bWrap{position:absolute;width:30rem;height:30rem;top:6rem;left:-32rem;border-radius:0.8rem;box-shadow:0 0 1rem #888;z-index:97;transition:box-shadow 0.5s ease;font-size:1.6rem;text-indent:0.2rem;}
 #bWrap .arrow{width:10rem;height:4rem;position:fixed;left:3rem;top:14.8rem;animation:1s shine infinite ease;cursor:default;}
 #bWrap .head,#bWrap .body{position:absolute;}
 #bWrap .head{width:0;height:0;left:-2rem;border-top:2rem solid transparent;border-bottom:2rem solid transparent;border-left:2rem solid transparent;border-right:2rem solid #9400D3;}
 #bWrap .body{height:3rem;width:4.6rem;top:0.5rem;background:#9400D3;left:1.8rem;border-top-right-radius:0.4rem;border-bottom-right-radius:0.4rem;line-height:2.8rem;color:#fff;font-weight:bold;}
 #bWrap .cover{position:absolute;width:100%;height:100%;background:#fff;top:0;left:0;display:none;border-radius:0.8rem;z-index:50;}
-#bWrap .side{position:absolute;width:2.4rem;height:6.1rem;left:100%;top:8rem;background:#999;border-top-right-radius:0.6rem;border-bottom-right-radius:0.6rem;cursor:pointer;}
+#bWrap .side{position:absolute;width:2.4rem;height:6.2rem;left:100%;top:8rem;background:#999;border-top-right-radius:0.6rem;border-bottom-right-radius:0.6rem;cursor:pointer;}
 #bWrap .side a{font-size:1.4rem;display:block;position:absolute;width:5rem;top:2.4rem;left:-1.4rem;color:#fff;transform:rotate(90deg);}
 #bWrap .board{position:relative;width:100%;height:100%;background:#F0FFF0;border-radius:0.8rem;overflow:hidden;animation:18s changing infinite ease;}
 #bWrap .logo{position:absolute;width:4.6rem;height:4.6rem;right:4.2rem;top:2.6rem;}

@@ -1,6 +1,7 @@
 <?php
 require 'connect.php';
 require 'core.php';
+
 $error_message = '';
 if(loggedin()){
 	header('Location: index.php');

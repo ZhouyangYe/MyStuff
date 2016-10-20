@@ -7,4 +7,8 @@ function loggedin(){
 		return false;
 	}
 }
+function setLocation(){//reserved
+	$time = 7;
+	//setCookie("location","url",time()+$time,'/');
+}
 ?>

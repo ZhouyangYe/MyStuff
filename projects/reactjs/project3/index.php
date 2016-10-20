@@ -2,7 +2,7 @@
 require '../../../connect.php';
 require '../../../core.php';
 if(!loggedin()){
-	header('Location: ../../../index.php');
+	//header('Location: ../../../index.php');
 }
 ?>
 <!DOCTYPE html>
