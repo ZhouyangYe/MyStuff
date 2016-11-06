@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,EAAE;EAAC,KAAK,EAAC,IAAI",
+"sources": ["../scss/notfound.component.scss"],
+"names": [],
+"file": "notfound.component.css"
+}

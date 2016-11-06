@@ -1,0 +1,57 @@
+<div class="bg">
+<fieldset>
+    <legend>
+        <h2>CANA Register</h2>
+    </legend>
+    <form class="form">
+        <a class="home" routerLink="/home">HOME</a>
+        <h3>个人信息 Personal Information</h3>
+        <div><input type="text" placeholder="Email Address" maxlength="32"><span class="mandatory">*</span></div>
+        <div><input type="password" placeholder="Password" maxlength="32"><span class="mandatory">*</span></div>
+        <div><input type="password" placeholder="Password Confirm" maxlength="32"/><span class="icon"></span><span class="mandatory">*</span></div>
+        <div><input type="text" placeholder="SIN 号码" maxlength="32"/><span class="mandatory">*</span></div>
+        <div><input type="text" placeholder="中文姓名 Chinese Name" maxlength="32"/><span class="mandatory">*</span></div>
+        <div><input type="text" placeholder="英文名 English Name" maxlength="32"/><span class="mandatory">*</span></div>
+        <div class="gender"><span>性别 Gender:</span><input type="radio" name="gender" value="male"/><span>男 Male</span><input type="radio" name="gender" value="female"/><span>女 Female</span><span class="mandatory">*</span></div>
+        <div class="birthday">
+            <input type="text" placeholder="日 Day" maxlength="2"/><span>/</span>
+            <input type="text" placeholder="月 Month" maxlength="2"/><span>/</span>
+            <input type="text" placeholder="年 Year" maxlength="4"/>
+            <span class="mandatory">*</span>
+        </div>
+        <div class="status2"><div><input type="radio" name="status" value="citizen"/><span>公民 Citizenship&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div><div><input type="radio" name="status" value="pr"/><span>永久居民 PR</span></div></div>
+        <div class="status1"><span>工作身份 Legal Status:</span><input type="radio" name="status" value="wp"/><span>工签 Work Permit</span><input type="radio" name="status" value="sp"/><span>学签 Student Visa</span><span class="mandatory">*</span></div>
+        <div><input type="text" placeholder="联系电话 Phone" maxlength="32"/><span class="mandatory">*</span></div>
+        <div><input type="text" placeholder="住址及邮编 Address and Postal Code" maxlength="32"/><span class="mandatory">*</span></div>
+        <div><input type="text" placeholder="领英 LinkedIn URL" maxlength="32"/><span class="mandatory">*</span></div>
+        <div class="relocatable"><span>是否接受换城市 Relocate Acceptable:</span><input type="radio" name="relocate" value="yes"/><span>是 YES</span><input type="radio" name="relocate" value="no"/><span>否 NO</span><span class="mandatory">*</span></div>
+        <div class="level2"><div><input type="radio" name="level" value="excellent"/><span>优秀 Native or Full Professional&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div></div>
+        <div class="level1"><span>英语水平 English Proficiency:</span><input type="radio" name="level" value="good"/><span>良好 Acceptable</span><input type="radio" name="level" value="normal"/><span>一般 Need to Improved</span><span class="mandatory">*</span></div>
+        <div><input type="text" placeholder="其它语言 Other Languages" maxlength="32"/><span class="mandatory">*</span></div>
+        <div><input type="text" placeholder="短期就业目标 Short-term Job Searching Strategy" maxlength="32"/><span class="mandatory">*</span></div>
+        <div class="bottom"><input type="text" placeholder="长期职业规划 Long-term Career Planning" maxlength="32"/><span class="mandatory">*</span></div>
+        <h3>教育经历 Education Background</h3>
+        <div class="education"><div><input type="text" placeholder="学校 University"/><input type="text" placeholder="专业 Major"/><input type="text" placeholder="城市 City"/><input class="last" type="text" placeholder="时间 Time"/><button type="button">添加 Add Education</button></div><span class="mandatory">*</span></div>
+        <h3>工作经历 Professional Experience</h3>
+        <div class="work"><div><input type="text" placeholder="企业 Company"/><input type="text" placeholder="职位 Title"/><input class="last" type="text" placeholder="时间 Time"/><button type="button">添加 Add Experience</button></div></div>
+        <h3>职业技能及培训 Professional Skills and Certificate</h3>
+        <h4>请列出掌握的职业技能及证书 Please list acquired professional skills and certificates.</h4>
+        <div class="skills"><div><input type="text" placeholder="计算机 Computer Science EX: MS Office ..."/><input type="text" placeholder="工作方式 Working Style EX: detail oriented, team worker ..."/><input type="text" placeholder="专业技术 Professional Skills EX: HTML,C++ ..."/><input class="last" type="text" placeholder="专业证书 Professional Certificate EX: CPA/CGA, SCP ..."/></div></div>
+        <h3>志愿者工作和社会活动 Volunteering and Social Works</h3>
+        <div class="social"><div><input type="text" placeholder="组织 Organization"/><input type="text" placeholder="职位和职责 Title and duty"/><input class="last" type="text" placeholder="时间 Time"/><button type="button">添加 Add Education</button></div></div>
+        <h3>关于CANA About CANA</h3>
+        <div class="where2"><div><input type="radio" name="where" value="oiec"/><span>OIEC推介媒体 OIEC Platform Media</span></div><div><input class="others" type="text" name="where_others"/><span>Others</span></div></div>
+        <div class="where1"><span>如何了解到CANA Where did you know CANA:</span><input type="radio" name="where" value="friends"/><span>朋友 Friends</span><span class="mandatory">*</span></div>
+        <div class="expect"><textarea placeholder="对就业指导课程的预期？ What is your expectation from Career Planning Program?"></textarea><span class="mandatory">*</span></div>
+        <h5>是否愿意付费参加其他职业培训及个人定制就业辅导？Are you willing to pay to participate other professional training or tailor made job searching coaching?</h5>
+        <div class="pay"><input type="radio" name="option_pay"/><span>否 NO</span><input type="radio" name="option_pay"/><span>是 YES</span><input type="text" name="course" placeholder="如果是的请注明课程If yes please specify"/></div>
+        <div class="difficulty"><textarea placeholder="找工作中遇到哪些困难？ Please list difficulties encountered during job hunting."></textarea><span class="mandatory">*</span></div>
+        <div class="advantage"><textarea placeholder="认为找工作时自己有哪些优势？ How do you evaluate your outstanding aspects in labor market?"></textarea><span class="mandatory">*</span></div>
+        <h5>是否愿意接受长期追踪回访？Do you accept long-term tracking and feedback survey from EZ Work?</h5>
+        <div class="track"><input type="radio" name="option_track"/><span>是 YES</span><input type="radio" name="option_track"/><span>否 NO</span></div>
+        <img class="loading" src="app/images/progress_bar.gif" alt="loading"/>
+        <button type="button">Submit</button>
+    </form>
+</fieldset>
+<footer><div class="copyright">© 2016&nbsp;&nbsp;CANA&nbsp;&nbsp;&nbsp;<a href="#">www.cana.com</a></div><a class="faq" routerLink="/faq">Frequently Asked Questions</a></footer>
+</div>

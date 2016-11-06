@@ -1,0 +1,129 @@
+<div #login class="loginPage"><cana-login [loginElem]="login"></cana-login></div>
+
+<header>
+    <div class="wrapper">
+        <div class="top-bar">
+            <div class="notification"><h2 [scrolling]="announcement"></h2></div>
+            <div class="contact-icon">
+                <a href="#" target="_blank" title="Email"></a>
+                <a href="#" target="_blank" title="Twitter"></a>
+                <a href="#" target="_blank" title="Facebook"></a>
+                <a href="#" target="_blank" title="Linkedin"></a>
+                <a href="#" target="_blank" title="Youtube"></a>
+            </div>
+        </div>
+
+        <nav>
+            <a class="cana-logo" routerLink="cana"><div></div></a>
+            <a class="login" (click)="showLogin(login)" routerLink="">LOG IN &nbsp;&nbsp;</a>
+            <div class="subscribe">
+                <div>Home&nbsp;</div><div></div>
+                <p #subinfo class="nav-prompt"></p>
+                <input #email type="text" placeholder="Email Address"/>
+                <button (click)="onSubscribe(subinfo,email)" type="button">subscribe</button>
+            </div>
+            <div class="buttons-nav" #buttons (mouseover)="scrollDown($event)" (click)="navClick($event)">
+                <div class="button b1" (mouseleave)="scrollUp(button1)" #button1>
+                    <a routerLink="cana" routerLinkActive="active">
+                        <h3>CANA</h3>
+                        <p>Our Home</p>
+                    </a>
+                    <ul>
+                        <li><a class="option" routerLink="cana">This is an option</a></li>
+                        <li><a class="option" routerLink="cana">This is an option</a></li>
+                        <li><a class="option" routerLink="cana">This is an option</a></li>
+                        <li><a class="option" routerLink="cana">This is an option</a></li>
+                        <li><a class="option" routerLink="cana">This is an option</a></li>
+                    </ul>
+                </div>
+                <div class="button b2" (mouseleave)="scrollUp(button2)" #button2>
+                    <a routerLink="service" routerLinkActive="active">
+                        <h3>SERVICE</h3>
+                        <p>Services we provide</p>
+                    </a>
+                    <ul>
+                        <li><a class="option" routerLink="cana">This is an option</a></li>
+                        <li><a class="option" routerLink="cana">This is an option</a></li>
+                        <li><a class="option" routerLink="cana">This is an option</a></li>
+                        <li><a class="option" routerLink="cana">This is an option</a></li>
+                        <li><a class="option" routerLink="cana">This is an option</a></li>
+                    </ul>
+                </div>
+                <div class="button b3" (mouseleave)="scrollUp(button3)" #button3>
+                    <a routerLink="member" routerLinkActive="active">
+                        <h3>MEMBER</h3>
+                        <p>Teachers and students</p>
+                    </a>
+                    <ul>
+                        <li><a class="option" routerLink="cana">This is an option</a></li>
+                        <li><a class="option" routerLink="cana">This is an option</a></li>
+                        <li><a class="option" routerLink="cana">This is an option</a></li>
+                        <li><a class="option" routerLink="cana">This is an option</a></li>
+                        <li><a class="option" routerLink="cana">This is an option</a></li>
+                    </ul>
+                </div>
+                <div class="button b4" (mouseleave)="scrollUp(button4)" #button4>
+                    <a routerLink="donation" routerLinkActive="active">
+                        <h3>DONATION</h3>
+                        <p>We appreciate your support</p>
+                    </a>
+                    <ul>
+                        <li><a class="option" routerLink="cana">This is an option</a></li>
+                        <li><a class="option" routerLink="cana">This is an option</a></li>
+                        <li><a class="option" routerLink="cana">This is an option</a></li>
+                        <li><a class="option" routerLink="cana">This is an option</a></li>
+                        <li><a class="option" routerLink="cana">This is an option</a></li>
+                    </ul>
+                </div>
+                <div class="button b5" (mouseleave)="scrollUp(button5)" #button5>
+                    <a routerLink="news" routerLinkActive="active">
+                        <h3>NEWS</h3>
+                        <p>News about CANA</p>
+                    </a>
+                    <ul>
+                        <li><a class="option" routerLink="cana">This is an option</a></li>
+                        <li><a class="option" routerLink="cana">This is an option</a></li>
+                        <li><a class="option" routerLink="cana">This is an option</a></li>
+                        <li><a class="option" routerLink="cana">This is an option</a></li>
+                        <li><a class="option" routerLink="cana">This is an option</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div #banner class="banner" (mouseenter)="stopBanner()" (mouseleave)="continueBanner()" (window:resize)="onResize(banner)">
+            <div #pic class="banner-wrap">
+                <img src="app/images/banner/default/banner1.jpg" alt=""/>
+                <img src="app/images/banner/default/banner2.jpg" alt=""/>
+            </div>
+            <div class="buttons">
+                <div (click)="onToggleBanner(1)" [class.selected]="bannerState==='banner1'" ></div>
+                <div (click)="onToggleBanner(2)" [class.selected]="bannerState==='banner2'" ></div>
+                <div (click)="onToggleBanner(3)" [class.selected]="bannerState==='banner3'" ></div>
+                <div (click)="onToggleBanner(4)" [class.selected]="bannerState==='banner4'" ></div>
+                <div (click)="onToggleBanner(5)" [class.selected]="bannerState==='banner5'" ></div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main #main>
+    <div class="main-wrapper">
+        <router-outlet></router-outlet>
+    </div>
+</main>
+
+<footer>
+    <div class="wrapper">
+        <div class="footer-bottom">
+            <p class="copyright">© 2016&nbsp;&nbsp;CANA&nbsp;&nbsp;&nbsp;<a href="#">www.cana.com</a></p>
+            <nav (click)="navClick($event)">
+                <a routerLink="cana" routerLinkActive="active"><h3>CANA</h3></a>
+                <a routerLink="service" routerLinkActive="active"><h3>SERVICE</h3></a>
+                <a routerLink="member" routerLinkActive="active"><h3>MEMBER</h3></a>
+                <a routerLink="donation" routerLinkActive="active"><h3>DONATION</h3></a>
+                <a routerLink="news" routerLinkActive="active"><h3>NEWS</h3></a>
+            </nav>
+        </div>
+    </div>
+</footer>

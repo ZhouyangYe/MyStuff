@@ -1,0 +1,140 @@
+@import "bourbon/bourbon";
+$primary_color: #121212;$font-color: #eee;
+main, header .wrapper,footer .wrapper{max-width: 1350px;min-width: 1100px;margin:0 auto;position: relative;}
+header,footer{min-width: 1100px;}
+
+.loginPage{position: fixed;width:100%;z-index: 88;height:100%;background-color: rgba(188,188,188,0.5);display: none;
+opacity: 0;}
+
+header{
+  border-top:10px solid $primary_color;
+  .top-bar{
+    height:28px;width:72%;background: $primary_color;margin:0 auto;color:$font-color;
+    .notification{
+      width:491px;height:26px;position: relative;float:left;margin-left:12px;position: relative;overflow: hidden;
+      h2{height:68%;font-size:12px;line-height:23px;font-weight:normal;
+        position: absolute;top:0;left:500px;white-space: nowrap;}
+    }
+    .contact-icon{
+      float:right;
+      $length: 25px;
+      a{width:$length;height:$length;float:left;margin-right:8px;cursor: pointer;}
+      a:nth-of-type(1) {background: url('app/images/icons/contact-icon.jpg') 0 0 no-repeat;}
+      a:nth-of-type(2) {background: url('app/images/icons/contact-icon.jpg') -25px 0 no-repeat;}
+      a:nth-of-type(3) {background: url('app/images/icons/contact-icon.jpg') -50px 0 no-repeat;}
+      a:nth-of-type(4) {background: url('app/images/icons/contact-icon.jpg') -75px 0 no-repeat;}
+      a:nth-of-type(5) {background: url('app/images/icons/contact-icon.jpg') -100px 0 no-repeat;}
+    }
+  }
+
+  nav{
+    width: 72%;height:98px;margin: 0 auto;clear: both;position: relative;
+    .cana-logo{
+      float: left;
+      div{width: 228px;height: 99px;background: url('app/images/logo.png') 0 0 no-repeat;
+        background-size: 228px 88px;margin: 18px 0 9px 28px;}
+    }
+    .login,button,input,.nav-prompt{position:absolute;}
+    .subscribe{
+      $top:12px;$height:14px;$font-size:11px;
+      position: absolute;width: 232px;top: 17px;right: 20px;height: 12px;
+      .nav-prompt{font-size:11px;left: 0;top:0;line-height: 12px;}
+      button{right: 0;width:68px;height:$height;line-height:$height;border:1px solid #888;top:$top;
+        box-sizing: content-box;cursor: pointer;background: #ddd;font-size: $font-size;}
+      button:hover{background: #666;color:#eee;@include transition(all 0.3s ease);}
+      button:active{background:$primary_color;@include transition(all 0.1s ease);}
+      input{left: 0;height:$height;width:158px;border:1px solid #888;top:$top;box-sizing: content-box;
+        text-indent: 3px;font-size: $font-size;}
+      div:nth-of-type(1){position: absolute;left:-389px;top:-2px;height:18px;font-size:23px;
+        font-weight: bold;line-height: 18px;font-family: "Times New Roman";cursor: default;color:#666;
+        border-bottom: 1px solid #666;width:245px;text-align: right;}
+      div:nth-of-type(2){position: absolute;border-right:1px dashed $primary_color;height: 17px;
+        left: -6px;top:12px;;}
+    }
+    .login{top:-24px;right:188px;font-size:12px;font-weight:bold;font-family:Arial;color:$font-color;
+      width:52px;height:14px;line-height:17px;border-right:1px solid $font-color;}
+    .login:hover{text-decoration: underline;@include transition(color 0.3s ease);color:#fff;}
+    .login:active{color:#888;@include transition(color 0.1s ease);}
+
+    .buttons-nav{
+      position:absolute;bottom: -15px;right:0;height:44px;
+      .button{
+        float:left;margin-left:12px;text-align: center;font-weight:bold;position: relative;
+        h3{font-size: 18px;font-weight:bold;}
+        p{font-size:9px;color:#888;width:96px;}
+        ul{
+          $border-color: #bcbcbc;$li-height:39px;
+          position:absolute;width:166px;overflow: hidden;text-align: center;
+          z-index: 8;font-size: 13px;top: 56px;left:-10px;height:0;opacity:0;box-shadow: 0 1px 8px #555555;
+          a{width:100%;height:100%;display: block;}
+          li{width: calc(100% - 2px);height:$li-height;line-height:$li-height;border:1px solid $border-color;
+            white-space: nowrap;cursor: pointer;background: #fff;opacity: 0.8;border-top:none;}
+          li:nth-of-type(1){border-top:1px solid $border-color;}
+          li:hover{opacity: 1;color: #eee;background: $primary_color;@include transition(all 0.6s ease);
+            border-color: $primary_color;}
+          li a:active{color: #a78e44;@include transition( color 0.1s ease);}
+        }
+      }
+      .button:nth-of-type(1){
+        margin:0;
+        p{width:83px;}
+      }
+      $color:#a78e44;
+      a:hover h3{color:$color;@include transition(color 0.5s ease);}
+      a.active h3{color:$color;@include transition(color 0.5s ease);}
+    }
+  }
+
+  .banner{
+    width:100%;position: relative;overflow: hidden;box-shadow: 0 0 8px #000;
+    .banner-wrap{
+      width:200%;height: 100%;position: absolute;left:0;
+      img {
+        float: left;height: 100%;width:50%;
+      }
+    }
+    .buttons{
+      position:absolute;left:58%;bottom:28px;z-index: 2;
+      $diameter:15px;
+      div{
+        width:$diameter;height:$diameter;border:2px solid rgba(255,255,255,1);float:left;
+        margin-left:28px;border-radius: 50%;background:rgba(255,255,255,0.3);
+        cursor: pointer;@include transition(background 1s ease);
+      }
+      div:hover{background: rgba(255,255,255,1);}
+      div.selected{background: rgba(255,255,255,1);}
+    }
+  }
+}
+
+main{
+  height:800px;margin:0 auto;position:relative;padding: 12px 0;display: block;
+  .main-wrapper{width: 72%;margin:0 auto;position:relative;}
+}
+
+footer{
+  $lineHeight:36px;
+  height:398px;border-bottom: $lineHeight solid $primary_color;font-family: Arial;
+  position: relative;background: #1c1c20;
+  .wrapper{height: 100%;background: #1c1c20;box-shadow: 0 0 8px #000;}
+  .footer-bottom{
+    width: 72%;height:$lineHeight;margin:0 auto;color:$font-color;left: 14%;bottom:-$lineHeight;position: absolute;
+    .copyright{
+      float: left;line-height: $lineHeight;height:$lineHeight;font-size: 12px;
+      a:hover{text-decoration: underline;@include transition(color 0.3s ease);color:#fff;}
+      a:active{color:#888;@include transition( color 0.1s ease );}
+    }
+    nav{
+      float: right;
+      a{
+        float:left;margin-left:18px;
+        h3{
+          font-size:12px;line-height: $lineHeight;height:$lineHeight;
+        }
+      }
+      $color:#888;
+      a:hover h3{color:$color;@include transition(color 0.3s ease);}
+      a.active h3{color:$color;}
+    }
+  }
+}

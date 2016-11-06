@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,EAAE;EAAC,KAAK,EAAC,IAAI",
+"sources": ["../scss/cana.component.scss"],
+"names": [],
+"file": "cana.component.css"
+}

@@ -1,0 +1,502 @@
+.bg {
+  background: #f3f9f1;
+  width: 100%; }
+
+.bg:before, .bg:after {
+  content: '';
+  display: table;
+  clear: both; }
+
+textarea, input {
+  box-sizing: border-box; }
+
+fieldset {
+  width: 888px;
+  margin: 28px auto 0;
+  text-align: center;
+  padding: 10px 0;
+  position: relative; }
+  fieldset h3 {
+    display: block;
+    margin-top: 49px;
+    font-size: 26px; }
+  fieldset h4 {
+    display: block;
+    margin: 8px 0;
+    font-size: 15px; }
+  fieldset h5 {
+    display: block;
+    margin: 36px 0 8px 0;
+    font-size: 18px;
+    color: #888; }
+  fieldset input {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #888;
+    color: #888; }
+    fieldset input::-webkit-input-placeholder {
+      color: #888; }
+    fieldset input::-moz-placeholder {
+      color: #888; }
+    fieldset input:-moz-placeholder {
+      color: #888; }
+    fieldset input:-ms-input-placeholder {
+      color: #888; }
+  fieldset textarea::-webkit-input-placeholder {
+    color: #888; }
+  fieldset textarea::-moz-placeholder {
+    color: #888; }
+  fieldset textarea:-moz-placeholder {
+    color: #888; }
+  fieldset textarea:-ms-input-placeholder {
+    color: #888; }
+  fieldset .mandatory {
+    position: absolute;
+    top: 9px;
+    right: -21px;
+    color: #f85654;
+    font-size: 21px; }
+  fieldset legend {
+    text-align: left;
+    margin-left: 28px;
+    display: block; }
+    fieldset legend h2 {
+      font-size: 56px;
+      text-shadow: 2px 3px 3px #000; }
+  fieldset .form {
+    display: inline-block;
+    position: relative;
+    width: 666px; }
+    fieldset .form a.home {
+      position: absolute;
+      top: -36px;
+      right: -96px;
+      font-weight: bold;
+      display: block; }
+    fieldset .form a.home:hover {
+      text-decoration: underline;
+      color: #888;
+      -webkit-transition: color 0.3s ease;
+      -moz-transition: color 0.3s ease;
+      transition: color 0.3s ease; }
+    fieldset .form a.home:active {
+      color: #1c1c20; }
+    fieldset .form div {
+      position: relative;
+      margin: 36px 0; }
+    fieldset .form input, fieldset .form button {
+      display: block; }
+    fieldset .form input {
+      width: 100%;
+      height: 36px;
+      line-height: 36px;
+      font-size: 18px;
+      padding: 0 32px 0 16px; }
+    fieldset .form .gender {
+      height: 36px;
+      border-bottom: 1px solid #888;
+      font-size: 18px;
+      line-height: 36px;
+      color: #888;
+      text-align: left; }
+      fieldset .form .gender span:nth-of-type(1) {
+        display: inline-block;
+        padding: 0 266px 0 16px; }
+      fieldset .form .gender span:nth-of-type(2) {
+        display: inline-block;
+        padding-right: 68px; }
+      fieldset .form .gender input[name="gender"] {
+        height: 15px;
+        width: 15px;
+        display: inline-block; }
+      fieldset .form .gender .mandatory {
+        line-height: normal; }
+    fieldset .form .status1 {
+      height: 36px;
+      font-size: 18px;
+      line-height: 36px;
+      color: #888;
+      text-align: left;
+      border-bottom: 1px solid #888;
+      margin-top: 0; }
+      fieldset .form .status1 span:nth-of-type(1) {
+        display: inline-block;
+        padding: 0 88px 0 16px; }
+      fieldset .form .status1 span:nth-of-type(2) {
+        display: inline-block;
+        padding-right: 28px; }
+      fieldset .form .status1 input[name="status"] {
+        height: 15px;
+        width: 15px;
+        display: inline-block; }
+      fieldset .form .status1 .mandatory {
+        line-height: normal; }
+    fieldset .form .status2 {
+      height: 36px;
+      font-size: 18px;
+      line-height: 36px;
+      color: #888;
+      text-align: left;
+      position: relative; }
+      fieldset .form .status2 div {
+        border-bottom: 1px solid #888;
+        position: absolute;
+        margin: 0; }
+      fieldset .form .status2 div:nth-of-type(1) {
+        top: 0;
+        right: 0; }
+      fieldset .form .status2 div:nth-of-type(2) {
+        top: 0;
+        right: 232px; }
+      fieldset .form .status2 span:nth-of-type(1) {
+        display: inline-block; }
+      fieldset .form .status2 span:nth-of-type(2) {
+        display: inline-block; }
+      fieldset .form .status2 input[name="status"] {
+        height: 15px;
+        width: 15px;
+        display: inline-block; }
+    fieldset .form .level1 {
+      height: 36px;
+      font-size: 18px;
+      line-height: 36px;
+      color: #888;
+      text-align: left;
+      border-bottom: 1px solid #888;
+      margin-top: 0; }
+      fieldset .form .level1 span:nth-of-type(1) {
+        display: inline-block;
+        padding: 0 26px 0 16px; }
+      fieldset .form .level1 span:nth-of-type(2) {
+        display: inline-block;
+        padding-right: 22px; }
+      fieldset .form .level1 input[name="level"] {
+        height: 15px;
+        width: 15px;
+        display: inline-block; }
+      fieldset .form .level1 .mandatory {
+        line-height: normal; }
+    fieldset .form .level2 {
+      height: 36px;
+      font-size: 18px;
+      line-height: 36px;
+      color: #888;
+      text-align: left;
+      position: relative; }
+      fieldset .form .level2 div {
+        position: absolute;
+        right: 0;
+        border-bottom: 1px solid #888;
+        margin: 0; }
+      fieldset .form .level2 span:nth-of-type(1) {
+        display: inline-block; }
+      fieldset .form .level2 input[name="level"] {
+        height: 15px;
+        width: 15px;
+        display: inline-block; }
+    fieldset .form .relocatable {
+      height: 36px;
+      border-bottom: 1px solid #888;
+      font-size: 18px;
+      line-height: 36px;
+      color: #888;
+      text-align: left; }
+      fieldset .form .relocatable span:nth-of-type(1) {
+        display: inline-block;
+        padding: 0 128px 0 16px; }
+      fieldset .form .relocatable span:nth-of-type(2) {
+        display: inline-block;
+        padding-right: 58px; }
+      fieldset .form .relocatable input[name="relocate"] {
+        height: 15px;
+        width: 15px;
+        display: inline-block; }
+      fieldset .form .relocatable .mandatory {
+        line-height: normal; }
+    fieldset .form .birthday input:nth-of-type(1), fieldset .form .birthday input:nth-of-type(2) {
+      float: left;
+      width: 88px;
+      width: 29%; }
+    fieldset .form .birthday input:nth-of-type(3) {
+      float: left;
+      width: 88px;
+      width: 32%; }
+    fieldset .form .birthday span:nth-of-type(1), fieldset .form .birthday span:nth-of-type(2) {
+      width: 5%;
+      float: left;
+      line-height: 36px; }
+    fieldset .form .birthday:after {
+      content: '';
+      display: table;
+      clear: both; }
+    fieldset .form .last {
+      border-bottom: 3px solid #888; }
+    fieldset .form .bottom {
+      border-bottom: 4px solid #888; }
+    fieldset .form .education {
+      height: auto;
+      border-bottom: 4px solid #888; }
+      fieldset .form .education div {
+        margin: 0;
+        position: relative;
+        border-bottom: 1px solid #888; }
+      fieldset .form .education button {
+        width: 178px;
+        height: 31px;
+        border: none;
+        background: url("app/images/icons/close.png") -30px 0 no-repeat;
+        background-color: transparent;
+        background-size: 61px 30px;
+        display: block;
+        border-radius: 31px;
+        float: none;
+        font-size: 16px;
+        font-weight: normal;
+        color: #888;
+        text-align: right;
+        margin: 18px auto 26px; }
+    fieldset .form .work {
+      height: auto;
+      border-bottom: 4px solid #888; }
+      fieldset .form .work div {
+        margin: 0;
+        position: relative;
+        border-bottom: 1px solid #888; }
+      fieldset .form .work button {
+        width: 188px;
+        height: 31px;
+        border: none;
+        background: url("app/images/icons/close.png") -30px 0 no-repeat;
+        background-color: transparent;
+        background-size: 61px 30px;
+        display: block;
+        border-radius: 31px;
+        float: none;
+        font-size: 16px;
+        font-weight: normal;
+        color: #888;
+        text-align: right;
+        margin: 18px auto 26px; }
+    fieldset .form .skills {
+      height: auto;
+      border-bottom: 4px solid #888; }
+      fieldset .form .skills .last {
+        border-bottom: none; }
+      fieldset .form .skills div {
+        margin: 0;
+        position: relative;
+        border-bottom: 1px solid #888; }
+    fieldset .form .social {
+      height: auto;
+      border-bottom: 4px solid #888; }
+      fieldset .form .social div {
+        margin: 0;
+        position: relative;
+        border-bottom: 1px solid #888; }
+      fieldset .form .social button {
+        width: 188px;
+        height: 31px;
+        border: none;
+        background: url("app/images/icons/close.png") -30px 0 no-repeat;
+        background-color: transparent;
+        background-size: 61px 30px;
+        display: block;
+        border-radius: 31px;
+        float: none;
+        font-size: 16px;
+        font-weight: normal;
+        color: #888;
+        text-align: right;
+        margin: 18px auto 26px; }
+    fieldset .form .where1 {
+      height: 36px;
+      font-size: 18px;
+      line-height: 36px;
+      color: #888;
+      text-align: left;
+      border-bottom: 1px solid #888;
+      margin-top: 0; }
+      fieldset .form .where1 span:nth-of-type(1) {
+        display: inline-block;
+        padding: 0 108px 0 16px; }
+      fieldset .form .where1 input[name="where"] {
+        height: 15px;
+        width: 15px;
+        display: inline-block; }
+      fieldset .form .where1 .mandatory {
+        line-height: normal; }
+    fieldset .form .where2 {
+      height: 36px;
+      font-size: 18px;
+      line-height: 36px;
+      color: #888;
+      text-align: left;
+      position: relative; }
+      fieldset .form .where2 div:nth-of-type(1) {
+        position: absolute;
+        right: 298px;
+        border-bottom: 1px solid #888;
+        margin: 0; }
+      fieldset .form .where2 div:nth-of-type(2) {
+        position: absolute;
+        right: 0;
+        border-bottom: 1px solid #888;
+        margin: 0; }
+      fieldset .form .where2 span:nth-of-type(1) {
+        display: inline-block; }
+      fieldset .form .where2 input {
+        height: 15px;
+        width: 15px;
+        display: inline-block; }
+      fieldset .form .where2 .others {
+        height: 28px;
+        width: 188px;
+        border: 1px solid #888;
+        text-indent: 0;
+        padding: 0 2px 0;
+        margin-right: 8px;
+        line-height: 28px; }
+    fieldset .form .expect {
+      height: 72px; }
+      fieldset .form .expect textarea {
+        height: 72px;
+        color: #888;
+        font-size: 18px;
+        width: 100%;
+        resize: none;
+        background: none;
+        border: 1px solid #888;
+        padding: 8px; }
+    fieldset .form .pay {
+      height: 36px;
+      color: #888;
+      border-bottom: 1px solid #888;
+      margin-top: 18px; }
+      fieldset .form .pay span:nth-of-type(1) {
+        display: inline-block;
+        padding: 0 49px 0 16px; }
+      fieldset .form .pay span:nth-of-type(2) {
+        display: inline-block;
+        padding-right: 28px; }
+      fieldset .form .pay input {
+        height: 15px;
+        width: 15px;
+        display: inline-block; }
+      fieldset .form .pay input:nth-of-type(3) {
+        width: 339px;
+        height: 30px;
+        border: 1px solid #888;
+        padding: 0;
+        line-height: 30px; }
+    fieldset .form .difficulty {
+      height: 72px; }
+      fieldset .form .difficulty textarea {
+        height: 72px;
+        color: #888;
+        font-size: 18px;
+        width: 100%;
+        resize: none;
+        background: none;
+        border: 1px solid #888;
+        padding: 8px; }
+    fieldset .form .advantage {
+      height: 72px; }
+      fieldset .form .advantage textarea {
+        height: 72px;
+        color: #888;
+        font-size: 18px;
+        width: 100%;
+        resize: none;
+        background: none;
+        border: 1px solid #888;
+        padding: 8px; }
+    fieldset .form .track {
+      height: 36px;
+      color: #888;
+      border-bottom: 5px solid #888;
+      margin-top: 18px; }
+      fieldset .form .track span:nth-of-type(1) {
+        display: inline-block;
+        padding: 0 49px 0 16px; }
+      fieldset .form .track span:nth-of-type(2) {
+        display: inline-block;
+        padding-right: 28px; }
+      fieldset .form .track input {
+        height: 15px;
+        width: 15px;
+        display: inline-block; }
+    fieldset .form .loading {
+      width: 288px;
+      float: left;
+      opacity: 0.6; }
+    fieldset .form button {
+      width: 28%;
+      height: 36px;
+      background: #ddd;
+      border: 1px solid #555;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 18px;
+      color: #555;
+      float: right;
+      margin-bottom: 20px; }
+    fieldset .form button:hover {
+      background: #555;
+      color: #eeeeee;
+      -webkit-transition: all 0.3s ease;
+      -moz-transition: all 0.3s ease;
+      transition: all 0.3s ease; }
+    fieldset .form button:active {
+      background: #ddd;
+      color: #555;
+      -webkit-transition: none;
+      -moz-transition: none;
+      transition: none; }
+
+footer {
+  width: 888px;
+  margin: 0 auto 28px;
+  color: #666;
+  height: 26px; }
+  footer .copyright {
+    margin-left: 8px;
+    float: left;
+    line-height: 26px;
+    height: 26px;
+    font-size: 15px; }
+    footer .copyright a:link {
+      color: inherit; }
+    footer .copyright a:hover {
+      text-decoration: underline;
+      -webkit-transition: color 0.3s ease;
+      -moz-transition: color 0.3s ease;
+      transition: color 0.3s ease;
+      color: #000; }
+    footer .copyright a:active {
+      color: #666;
+      -webkit-transition: color 0.1s ease;
+      -moz-transition: color 0.1s ease;
+      transition: color 0.1s ease; }
+  footer .faq {
+    float: right;
+    display: block;
+    height: 26px;
+    color: #666;
+    font-size: 15px;
+    line-height: 27px;
+    margin-right: 8px; }
+  footer .faq:link {
+    color: inherit; }
+  footer .faq:hover {
+    text-decoration: underline;
+    -webkit-transition: color 0.3s ease;
+    -moz-transition: color 0.3s ease;
+    transition: color 0.3s ease;
+    color: #000; }
+  footer .faq:active {
+    color: #666;
+    -webkit-transition: color 0.1s ease;
+    -moz-transition: color 0.1s ease;
+    transition: color 0.1s ease; }
+
+/*# sourceMappingURL=register.component.css.map */

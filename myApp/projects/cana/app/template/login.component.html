@@ -1,0 +1,15 @@
+<div #login class="wrapper" (window:resize)="onResize(login)">
+    <div #close class="close" (click)="onClose()"></div>
+    <h3>CANA Login</h3>
+    <div class="icon"></div>
+    <input type="text" maxlength="32"/>
+    <div class="icon"></div>
+    <input type="password" maxlength="32"/>
+    <div class="forget"><a routerLink="/forget">Forget Password?</a></div>
+    <div class="process">
+        <img #loading src="app/images/progress_bar.gif" alt="progress bar"/>
+        <p #info>Failed to log in, please try again.</p>
+    </div>
+    <button #button type="button" (click)="onSignIn(loading,button,close,info)">Submit</button>
+    <div class="links"><a routerLink="/faq">FAQ</a><a routerLink="/register">Create an Account</a></div>
+</div>

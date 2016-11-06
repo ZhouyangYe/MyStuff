@@ -1,0 +1,156 @@
+@import "bourbon/bourbon";
+.bg{background: #f3f9f1;width:100%;}
+.bg:before,.bg:after{content:'';display: table;clear:both;}
+textarea,input{box-sizing: border-box;}
+fieldset{
+  $color: #888;
+  width:888px;margin:28px auto 0;text-align: center;padding: 10px 0;position: relative;
+  h3{display:block;margin-top:49px;font-size: 26px;}
+  h4{display:block;margin: 8px 0;font-size:15px;}
+  h5{display:block;margin:36px 0 8px 0;font-size: 18px;color:$color;}
+  input{background-color:transparent;border:none;border-bottom:1px solid #888;color:$color;@include placeholder{color:#888;};}
+  textarea{@include placeholder{color:#888;};}
+  .mandatory{position: absolute;top: 9px;right:-21px;color:#f85654;font-size: 21px;}
+  legend{
+    text-align: left;margin-left: 28px;display: block;
+    h2{font-size:56px;text-shadow:2px 3px 3px #000;}
+  }
+  .form{
+    display: inline-block;position: relative;width:666px;
+    a.home{position: absolute;top:-36px;right:-96px;font-weight: bold;display: block;}
+    a.home:hover{text-decoration: underline;color:#888;@include transition(color 0.3s ease);}
+    a.home:active{color: #1c1c20;}
+    div{position: relative;margin:36px 0;}
+    input,button{display: block;}
+    input{width:100%;height: 36px;line-height: 36px;font-size: 18px;padding:0 32px 0 16px;}
+    .gender{height:36px;border-bottom:1px solid #888;font-size:18px;line-height: 36px;color:$color;text-align: left;
+      span:nth-of-type(1){display:inline-block;padding: 0 266px 0 16px;}
+      span:nth-of-type(2){display:inline-block;padding-right: 68px;}
+      input[name="gender"]{height:15px;width:15px;display:inline-block;}
+      .mandatory{line-height: normal;}
+    }
+    .status1{
+       height:36px;font-size:18px;line-height: 36px;color:$color;text-align: left;border-bottom:1px solid #888;
+      margin-top:0;
+       span:nth-of-type(1){display:inline-block;padding: 0 88px 0 16px;}
+       span:nth-of-type(2){display:inline-block;padding-right: 28px;}
+       input[name="status"]{height:15px;width:15px;display:inline-block;}
+       .mandatory{line-height: normal;}
+     }
+    .status2{
+      height:36px;font-size:18px;line-height: 36px;color:$color;text-align: left;position: relative;
+      div{border-bottom:1px solid #888;position:absolute;margin:0;}
+      div:nth-of-type(1){top:0;right:0;}
+      div:nth-of-type(2){top:0;right:232px;}
+      span:nth-of-type(1){display:inline-block;}
+      span:nth-of-type(2){display:inline-block;}
+      input[name="status"]{height:15px;width:15px;display:inline-block;}
+    }
+    .level1{
+      height:36px;font-size:18px;line-height: 36px;color:$color;text-align: left;border-bottom:1px solid #888;
+      margin-top:0;
+      span:nth-of-type(1){display:inline-block;padding: 0 26px 0 16px;}
+      span:nth-of-type(2){display:inline-block;padding-right:22px;}
+      input[name="level"]{height: 15px;width:15px;display:inline-block;}
+      .mandatory{line-height: normal;}
+    }
+    .level2{
+      height:36px;font-size:18px;line-height: 36px;color:$color;text-align: left;position: relative;
+      div{position: absolute;right:0;border-bottom:1px solid #888;margin:0;}
+      span:nth-of-type(1){display:inline-block;}
+      input[name="level"]{height: 15px;width:15px;display:inline-block;}
+    }
+    .relocatable{height:36px;border-bottom:1px solid #888;font-size:18px;line-height: 36px;color:$color;text-align: left;
+      span:nth-of-type(1){display:inline-block;padding: 0 128px 0 16px;}
+      span:nth-of-type(2){display:inline-block;padding-right: 58px;}
+      input[name="relocate"]{height:15px;width:15px;display:inline-block;}
+      .mandatory{line-height: normal;}
+    }
+    .birthday input:nth-of-type(1),.birthday input:nth-of-type(2){float:left;width:88px;width: 29%;}
+    .birthday{
+      input:nth-of-type(3){float:left;width:88px;width:32%;}
+      span:nth-of-type(1),span:nth-of-type(2){width:5%;float: left;line-height: 36px;}
+    }
+    .birthday:after{content:'';display:table;clear: both;}
+    .last{border-bottom:3px solid #888;}
+    .bottom{border-bottom:4px solid #888;}
+    .education{height:auto;border-bottom:4px solid #888;
+      div{margin:0;position: relative;border-bottom:1px solid #888;}
+      button{width:178px;height:31px;border:none;background: url('app/images/icons/close.png') -30px 0 no-repeat;
+      background-color: transparent;background-size: 61px 30px;display: block;border-radius: 31px;float:none;
+      font-size:16px;font-weight: normal;color:$color;text-align: right;margin:18px auto 26px;}
+    }
+    .work{height:auto;border-bottom:4px solid #888;
+      div{margin:0;position: relative;border-bottom:1px solid #888;}
+      button{width:188px;height:31px;border:none;background: url('app/images/icons/close.png') -30px 0 no-repeat;
+        background-color: transparent;background-size: 61px 30px;display: block;border-radius: 31px;float:none;
+        font-size:16px;font-weight: normal;color:$color;text-align: right;margin:18px auto 26px;}
+    }
+    .skills{height:auto;border-bottom:4px solid #888;
+      .last{border-bottom:none;}
+      div{margin:0;position: relative;border-bottom:1px solid #888;}
+    }
+    .social{height:auto;border-bottom:4px solid #888;
+      div{margin:0;position: relative;border-bottom:1px solid #888;}
+      button{width:188px;height:31px;border:none;background: url('app/images/icons/close.png') -30px 0 no-repeat;
+        background-color: transparent;background-size: 61px 30px;display: block;border-radius: 31px;float:none;
+        font-size:16px;font-weight: normal;color:$color;text-align: right;margin:18px auto 26px;}
+    }
+    .where1{
+      height:36px;font-size:18px;line-height: 36px;color:$color;text-align: left;border-bottom:1px solid #888;
+      margin-top:0;
+      span:nth-of-type(1){display:inline-block;padding: 0 108px 0 16px;}
+      input[name="where"]{height: 15px;width:15px;display:inline-block;}
+      .mandatory{line-height: normal;}
+    }
+    .where2{
+      height:36px;font-size:18px;line-height: 36px;color:$color;text-align: left;position: relative;
+      div:nth-of-type(1){position: absolute;right:298px;border-bottom:1px solid #888;margin:0;}
+      div:nth-of-type(2){position: absolute;right:0;border-bottom:1px solid #888;margin:0;}
+      span:nth-of-type(1){display:inline-block;}
+      input{height:15px;width:15px;display:inline-block;}
+      .others{height: 28px;width:188px;border:1px solid #888;text-indent: 0;padding: 0 2px 0;margin-right:8px;
+      line-height: 28px;}
+    }
+    .expect{height: 72px;
+      textarea{height:72px;color:$color;font-size:18px;width:100%;resize: none;background: none;border:1px solid #888;
+      padding:8px;}
+    }
+    .pay{height:36px;color:$color;border-bottom: 1px solid #888;margin-top:18px;
+      span:nth-of-type(1){display:inline-block;padding: 0 49px 0 16px;}
+      span:nth-of-type(2){display:inline-block;padding-right: 28px;}
+      input{height:15px;width:15px;display:inline-block;}
+      input:nth-of-type(3){width:339px;height:30px;border:1px solid #888;padding:0;line-height: 30px;}
+    }
+    .difficulty{height:72px;
+      textarea{height:72px;color:$color;font-size:18px;width:100%;resize: none;background: none;border:1px solid #888;
+        padding:8px;}
+    }
+    .advantage{height:72px;
+      textarea{height:72px;color:$color;font-size:18px;width:100%;resize: none;background: none;border:1px solid #888;
+        padding:8px;}
+    }
+    .track{height:36px;color:$color;border-bottom: 5px solid #888;margin-top:18px;
+      span:nth-of-type(1){display:inline-block;padding: 0 49px 0 16px;}
+      span:nth-of-type(2){display:inline-block;padding-right: 28px;}
+      input{height:15px;width:15px;display:inline-block;}
+    }
+    .loading{width:288px;float:left;opacity: 0.6;}
+    button{width:28%;height: 36px;background: #ddd;border: 1px solid #555;cursor: pointer;font-weight: bold;
+      font-size:18px;color: #555;float: right;margin-bottom:20px;}
+    button:hover{background:#555;color:#eeeeee;@include transition(all 0.3s ease);}
+    button:active{background: #ddd;color: #555;@include transition(none);}
+  }
+}
+footer{width:888px;margin:0 auto 28px;$lineHeight:26px;color:#666;height:$lineHeight;$fontSize: 15px;
+  .copyright{margin-left:8px;
+    float: left;line-height: $lineHeight;height:$lineHeight;font-size: $fontSize;
+    a:link{color:inherit;}
+    a:hover{text-decoration: underline;@include transition(color 0.3s ease);color:#000;}
+    a:active{color:#666;@include transition( color 0.1s ease );}
+  }
+  .faq{float:right;display: block;height:$lineHeight;color:#666;font-size: $fontSize;line-height: 27px;margin-right:8px;}
+  .faq:link{color:inherit;}
+  .faq:hover{text-decoration: underline;@include transition(color 0.3s ease);color:#000;}
+  .faq:active{color:#666;@include transition( color 0.1s ease );}
+}

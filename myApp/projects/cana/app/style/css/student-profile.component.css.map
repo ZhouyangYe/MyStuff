@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,EAAE;EAAC,KAAK,EAAC,IAAI",
+"sources": ["../scss/student-profile.component.scss"],
+"names": [],
+"file": "student-profile.component.css"
+}

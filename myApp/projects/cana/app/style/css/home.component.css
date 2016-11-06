@@ -1,0 +1,333 @@
+main, header .wrapper, footer .wrapper {
+  max-width: 1350px;
+  min-width: 1100px;
+  margin: 0 auto;
+  position: relative; }
+
+header, footer {
+  min-width: 1100px; }
+
+.loginPage {
+  position: fixed;
+  width: 100%;
+  z-index: 88;
+  height: 100%;
+  background-color: rgba(188, 188, 188, 0.5);
+  display: none;
+  opacity: 0; }
+
+header {
+  border-top: 10px solid #121212; }
+  header .top-bar {
+    height: 28px;
+    width: 72%;
+    background: #121212;
+    margin: 0 auto;
+    color: #eee; }
+    header .top-bar .notification {
+      width: 491px;
+      height: 26px;
+      position: relative;
+      float: left;
+      margin-left: 12px;
+      position: relative;
+      overflow: hidden; }
+      header .top-bar .notification h2 {
+        height: 68%;
+        font-size: 12px;
+        line-height: 23px;
+        font-weight: normal;
+        position: absolute;
+        top: 0;
+        left: 500px;
+        white-space: nowrap; }
+    header .top-bar .contact-icon {
+      float: right; }
+      header .top-bar .contact-icon a {
+        width: 25px;
+        height: 25px;
+        float: left;
+        margin-right: 8px;
+        cursor: pointer; }
+      header .top-bar .contact-icon a:nth-of-type(1) {
+        background: url("app/images/icons/contact-icon.jpg") 0 0 no-repeat; }
+      header .top-bar .contact-icon a:nth-of-type(2) {
+        background: url("app/images/icons/contact-icon.jpg") -25px 0 no-repeat; }
+      header .top-bar .contact-icon a:nth-of-type(3) {
+        background: url("app/images/icons/contact-icon.jpg") -50px 0 no-repeat; }
+      header .top-bar .contact-icon a:nth-of-type(4) {
+        background: url("app/images/icons/contact-icon.jpg") -75px 0 no-repeat; }
+      header .top-bar .contact-icon a:nth-of-type(5) {
+        background: url("app/images/icons/contact-icon.jpg") -100px 0 no-repeat; }
+  header nav {
+    width: 72%;
+    height: 98px;
+    margin: 0 auto;
+    clear: both;
+    position: relative; }
+    header nav .cana-logo {
+      float: left; }
+      header nav .cana-logo div {
+        width: 228px;
+        height: 99px;
+        background: url("app/images/logo.png") 0 0 no-repeat;
+        background-size: 228px 88px;
+        margin: 18px 0 9px 28px; }
+    header nav .login, header nav button, header nav input, header nav .nav-prompt {
+      position: absolute; }
+    header nav .subscribe {
+      position: absolute;
+      width: 232px;
+      top: 17px;
+      right: 20px;
+      height: 12px; }
+      header nav .subscribe .nav-prompt {
+        font-size: 11px;
+        left: 0;
+        top: 0;
+        line-height: 12px; }
+      header nav .subscribe button {
+        right: 0;
+        width: 68px;
+        height: 14px;
+        line-height: 14px;
+        border: 1px solid #888;
+        top: 12px;
+        box-sizing: content-box;
+        cursor: pointer;
+        background: #ddd;
+        font-size: 11px; }
+      header nav .subscribe button:hover {
+        background: #666;
+        color: #eee;
+        -webkit-transition: all 0.3s ease;
+        -moz-transition: all 0.3s ease;
+        transition: all 0.3s ease; }
+      header nav .subscribe button:active {
+        background: #121212;
+        -webkit-transition: all 0.1s ease;
+        -moz-transition: all 0.1s ease;
+        transition: all 0.1s ease; }
+      header nav .subscribe input {
+        left: 0;
+        height: 14px;
+        width: 158px;
+        border: 1px solid #888;
+        top: 12px;
+        box-sizing: content-box;
+        text-indent: 3px;
+        font-size: 11px; }
+      header nav .subscribe div:nth-of-type(1) {
+        position: absolute;
+        left: -389px;
+        top: -2px;
+        height: 18px;
+        font-size: 23px;
+        font-weight: bold;
+        line-height: 18px;
+        font-family: "Times New Roman";
+        cursor: default;
+        color: #666;
+        border-bottom: 1px solid #666;
+        width: 245px;
+        text-align: right; }
+      header nav .subscribe div:nth-of-type(2) {
+        position: absolute;
+        border-right: 1px dashed #121212;
+        height: 17px;
+        left: -6px;
+        top: 12px; }
+    header nav .login {
+      top: -24px;
+      right: 188px;
+      font-size: 12px;
+      font-weight: bold;
+      font-family: Arial;
+      color: #eee;
+      width: 52px;
+      height: 14px;
+      line-height: 17px;
+      border-right: 1px solid #eee; }
+    header nav .login:hover {
+      text-decoration: underline;
+      -webkit-transition: color 0.3s ease;
+      -moz-transition: color 0.3s ease;
+      transition: color 0.3s ease;
+      color: #fff; }
+    header nav .login:active {
+      color: #888;
+      -webkit-transition: color 0.1s ease;
+      -moz-transition: color 0.1s ease;
+      transition: color 0.1s ease; }
+    header nav .buttons-nav {
+      position: absolute;
+      bottom: -15px;
+      right: 0;
+      height: 44px; }
+      header nav .buttons-nav .button {
+        float: left;
+        margin-left: 12px;
+        text-align: center;
+        font-weight: bold;
+        position: relative; }
+        header nav .buttons-nav .button h3 {
+          font-size: 18px;
+          font-weight: bold; }
+        header nav .buttons-nav .button p {
+          font-size: 9px;
+          color: #888;
+          width: 96px; }
+        header nav .buttons-nav .button ul {
+          position: absolute;
+          width: 166px;
+          overflow: hidden;
+          text-align: center;
+          z-index: 8;
+          font-size: 13px;
+          top: 56px;
+          left: -10px;
+          height: 0;
+          opacity: 0;
+          box-shadow: 0 1px 8px #555555; }
+          header nav .buttons-nav .button ul a {
+            width: 100%;
+            height: 100%;
+            display: block; }
+          header nav .buttons-nav .button ul li {
+            width: calc(100% - 2px);
+            height: 39px;
+            line-height: 39px;
+            border: 1px solid #bcbcbc;
+            white-space: nowrap;
+            cursor: pointer;
+            background: #fff;
+            opacity: 0.8;
+            border-top: none; }
+          header nav .buttons-nav .button ul li:nth-of-type(1) {
+            border-top: 1px solid #bcbcbc; }
+          header nav .buttons-nav .button ul li:hover {
+            opacity: 1;
+            color: #eee;
+            background: #121212;
+            -webkit-transition: all 0.6s ease;
+            -moz-transition: all 0.6s ease;
+            transition: all 0.6s ease;
+            border-color: #121212; }
+          header nav .buttons-nav .button ul li a:active {
+            color: #a78e44;
+            -webkit-transition: color 0.1s ease;
+            -moz-transition: color 0.1s ease;
+            transition: color 0.1s ease; }
+      header nav .buttons-nav .button:nth-of-type(1) {
+        margin: 0; }
+        header nav .buttons-nav .button:nth-of-type(1) p {
+          width: 83px; }
+      header nav .buttons-nav a:hover h3 {
+        color: #a78e44;
+        -webkit-transition: color 0.5s ease;
+        -moz-transition: color 0.5s ease;
+        transition: color 0.5s ease; }
+      header nav .buttons-nav a.active h3 {
+        color: #a78e44;
+        -webkit-transition: color 0.5s ease;
+        -moz-transition: color 0.5s ease;
+        transition: color 0.5s ease; }
+  header .banner {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 8px #000; }
+    header .banner .banner-wrap {
+      width: 200%;
+      height: 100%;
+      position: absolute;
+      left: 0; }
+      header .banner .banner-wrap img {
+        float: left;
+        height: 100%;
+        width: 50%; }
+    header .banner .buttons {
+      position: absolute;
+      left: 58%;
+      bottom: 28px;
+      z-index: 2; }
+      header .banner .buttons div {
+        width: 15px;
+        height: 15px;
+        border: 2px solid white;
+        float: left;
+        margin-left: 28px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.3);
+        cursor: pointer;
+        -webkit-transition: background 1s ease;
+        -moz-transition: background 1s ease;
+        transition: background 1s ease; }
+      header .banner .buttons div:hover {
+        background: white; }
+      header .banner .buttons div.selected {
+        background: white; }
+
+main {
+  height: 800px;
+  margin: 0 auto;
+  position: relative;
+  padding: 12px 0;
+  display: block; }
+  main .main-wrapper {
+    width: 72%;
+    margin: 0 auto;
+    position: relative; }
+
+footer {
+  height: 398px;
+  border-bottom: 36px solid #121212;
+  font-family: Arial;
+  position: relative;
+  background: #1c1c20; }
+  footer .wrapper {
+    height: 100%;
+    background: #1c1c20;
+    box-shadow: 0 0 8px #000; }
+  footer .footer-bottom {
+    width: 72%;
+    height: 36px;
+    margin: 0 auto;
+    color: #eee;
+    left: 14%;
+    bottom: -36px;
+    position: absolute; }
+    footer .footer-bottom .copyright {
+      float: left;
+      line-height: 36px;
+      height: 36px;
+      font-size: 12px; }
+      footer .footer-bottom .copyright a:hover {
+        text-decoration: underline;
+        -webkit-transition: color 0.3s ease;
+        -moz-transition: color 0.3s ease;
+        transition: color 0.3s ease;
+        color: #fff; }
+      footer .footer-bottom .copyright a:active {
+        color: #888;
+        -webkit-transition: color 0.1s ease;
+        -moz-transition: color 0.1s ease;
+        transition: color 0.1s ease; }
+    footer .footer-bottom nav {
+      float: right; }
+      footer .footer-bottom nav a {
+        float: left;
+        margin-left: 18px; }
+        footer .footer-bottom nav a h3 {
+          font-size: 12px;
+          line-height: 36px;
+          height: 36px; }
+      footer .footer-bottom nav a:hover h3 {
+        color: #888;
+        -webkit-transition: color 0.3s ease;
+        -moz-transition: color 0.3s ease;
+        transition: color 0.3s ease; }
+      footer .footer-bottom nav a.active h3 {
+        color: #888; }
+
+/*# sourceMappingURL=home.component.css.map */
